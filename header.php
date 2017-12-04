@@ -1,5 +1,5 @@
 <!--Top header-->
-<div class="header-top">\
+<div class="header-top">
 	<div class="topword">
 		<ul>
 			<li><a href="#"> Create Account </a></li>
@@ -7,9 +7,7 @@
 		</ul>	
 	</div>
 	<div class="view-cart-main">
-
-		<a href="#"><button class="view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
-		
+		<a href="#"><button class="view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>	
 	</div>
 </div>
 <!--//Top header-->
@@ -25,10 +23,7 @@
 					<button type="submit" class="btn btn-default search" aria-label="Left Align">
 					<i class="fa fa-search" aria-hidden="true"> </i>
 					</button>
-			
-
-				</form>
-		
+				</form>	
 			</div>
 	</div>
 </div>
