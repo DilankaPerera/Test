@@ -13,14 +13,14 @@
 <link href="assets/css/font-awesome.css" rel="stylesheet">
 <!-- //font-awesome icons -->
 <!-- js -->
-<script src="js/jquery-1.11.1.min.js"></script>
+<script src="assets/js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 
 </head>
 	
 <body>
 <!-- header -->
-<?php include_once('header.php'); ?>
+
 
 <!-- breadcrumbs -->
 	<div class="breadcrumbs">
@@ -34,6 +34,7 @@
 <!-- //breadcrumbs -->
 
 <!-- register form -->
+<?php include_once('header.php'); ?>
 	<div class="register">
 		<div class="container">
 			<h2>Register Here</h2>

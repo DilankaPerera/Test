@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="agile-login">
 				<ul>
-					<li><a href="registered.php"> Create Account </a></li>
+					<li><a href="<?php echo base_url('index.php/Users'); ?>"> Create Account </a></li>
 					<li><a href="login.php">Login</a></li>		
 				</ul>
 			</div>
