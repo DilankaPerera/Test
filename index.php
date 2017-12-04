@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,15 +17,15 @@
 	<?php include_once('header.php'); ?>
 
 	<!-- content -->
-	
+
 
 	<div class="main_content">
 		<!-- sidebar -->
 		<?php include_once('sidebar.php'); ?>
-		
+
 
 		<div class="right_content"></div>
-	
+
 </div>
 
 
@@ -41,3 +42,4 @@
 
 </body>
 </html>
+=======
