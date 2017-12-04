@@ -1,3 +1,5 @@
+<?php include_once('header.php'); ?>
+
 <html>
 
 <head>
@@ -25,5 +27,7 @@
 
 </div>
 
+
 </body>
 </html>
+<?php include_once('footer.php'); ?>
