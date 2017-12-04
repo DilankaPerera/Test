@@ -16,8 +16,8 @@
 <script src="js/jquery-1.11.1.min.js"></script>
 <!-- //js -->
 
-<script type="text/javascript" src="js/move-top.js"></script>
-<script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="assets/js/move-top.js"></script>
+<script type="text/javascript" src="assets/js/easing.js"></script>
 <script type="text/javascript">
 	jQuery(document).ready(function($) {
 		$(".scroll").click(function(event){		

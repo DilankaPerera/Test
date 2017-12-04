@@ -24,9 +24,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 <<<<<<< HEAD
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost/ecom';
 =======
 $config['base_url'] = '\'http://localhost/Test';
+>>>>>>> master
+=======
+$config['base_url'] = 'http://localhost/Test/';
 >>>>>>> master
 
 /*
