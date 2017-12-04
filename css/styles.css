@@ -199,13 +199,21 @@ button.btn.btn-default.search:hover {
 .form {
   background: rgba(33, 40, 47, 0.9);
   padding: 40px;
-  max-width: 300px;
-  margin: 70px auto;
-  border-radius: 4px;
+	border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+
 }
 
+/*divide buttons horizontally*/
+#formAlign_agent{
+	float: left;
+	margin: 200px 100px;
+}
 
+#formAlign_customer{
+	float: right;
+	margin: 200px 100px ;
+}
 
 
 
