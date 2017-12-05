@@ -1,7 +1,7 @@
 <?php
 // After uploading to online server, change this connection accordingly
 
-$con = mysqli_connect("localhost","root","","gzone_tecnologiesdb");
+$con = mysqli_connect("localhost","root","","gzone_technologiesdb");
 
 if (mysqli_connect_errno())
 {

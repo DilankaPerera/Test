@@ -91,7 +91,6 @@ include("includes/db.php");
 
 </html>
 
-<<<<<<< HEAD
 <?php include_once('footer.php'); ?>
 
 <?php
