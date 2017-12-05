@@ -1,16 +1,13 @@
-
+<?php include_once('header.php'); ?>
 
 <html>
 
 <head>
 <title> Agent Registration  </title>
-<link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
 </head>
 
 <body>
-
-  <?php include_once('templates/header.php'); ?>
-
   <div  >
     <form class="form">
       <fieldset>
@@ -47,6 +44,18 @@
     <td> <input type="varchar" size="25" id="email"></td>
 </tr>
     </div>
+    <div>
+      <tr>
+        <td><label for="pwd"> <b>Password </b> </label></td>
+        <td><input type="password" size="25" id="pwd"></td>
+      </tr>
+    </div>
+    <div>
+      <tr>
+        <td><label for="repwd"> <b> Re-enter Password </b> </label></td>
+        <td><input type="password" size="25" id="repwd"></td>
+      </tr>
+    </div>
 
 <tr>
     <td> <label for="agentpic"> <b>Insert your pictue </b> </label></td>
@@ -70,11 +79,9 @@
   </div>
 
 
-
- <?php include_once('templates/footer.php'); ?>
 </body>
 
 
 </html>
 
-
+<?php include_once('footer.php'); ?>

@@ -46,6 +46,12 @@
                 <td><input type="password" size="25" id="pwd"></td>
               </tr>
             </div>
+            <div>
+              <tr>
+                <td><label for="repwd"> <b> Re-enter Password </b> </label></td>
+                <td><input type="password" size="25" id="repwd"></td>
+              </tr>
+            </div>
 
 
 
@@ -109,5 +115,3 @@
 
 
 </html>
-
-
