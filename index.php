@@ -13,7 +13,7 @@
 <body>
 
 	<!-- header -->
-	<?php include_once('header.php'); ?>
+	<?php include_once('templates/header.php'); ?>
 
 	<!-- content -->
 
@@ -37,7 +37,7 @@
 
 
 	<!-- footer -->
-	<?php include_once('footer.php'); ?>
+	<?php include_once('templates/footer.php'); ?>
 
 </body>
 </html>
