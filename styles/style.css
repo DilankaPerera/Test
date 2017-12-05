@@ -197,7 +197,6 @@ i.fa.fa-arrow-right {
 }
 .right_content{
 	width: 80%;
-	height: 1200px;
 	float: right;
 	background-color:#F2F3F4  ;
 }
@@ -206,7 +205,6 @@ i.fa.fa-arrow-right {
 .sidebar{
 	width: 20%;
 	float: left;
-	height: 1200px;
 	background-color: #1ABC9C;
 }
 .sidebar_title{
