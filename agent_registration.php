@@ -35,7 +35,7 @@
     <br>
     <div>
     <label for="email"> E-mail : </label>
-    <input type="text" size="25" id="email">
+    <input type="varchar" size="25" id="email">
     </div>
 
     <br>
@@ -44,6 +44,11 @@
  <input type="submit" value="Insert image">
 
 <br>
+
+<div>
+<label for="pnumber"> Phone number : </label>
+<input type="varchar" size="25" id="pnumber">
+</div>
           </fieldset>
 
     </form>
