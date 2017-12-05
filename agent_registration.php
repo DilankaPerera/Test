@@ -1,10 +1,11 @@
-<?php include_once('header.php'); ?>
+<?php include_once('Templates/header.php'); ?>
 
 <html>
 
 <head>
 <title> Agent Registration  </title>
 <link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+<link href="css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,8 +19,8 @@
       <div>
 
 <tr>
-    <td>  <label for="fname"> <b>First Name </b> </label></td>
-      <td> <input type="text" size="25" id="fname"></td>
+    <td>  <label for="fname"> <b>First Name<span class="req">*</span> </b> </label></td>
+      <td> <input type="text" size="25" id="fname" required autocomplete="off"></td>
 </tr>
       </div>
 
@@ -32,28 +33,28 @@
 
     <div>
 <tr>
-    <td> <label for="lname"> <b>Last Name </b> </label></td>
-    <td> <input type="text" size="25" id="lname"></td>
+    <td> <label for="lname"> <b>Last Name <span class="req">*</span></b> </label></td>
+    <td> <input type="text" size="25" id="lname" required autocomplete="off"></td>
 </tr>
     </div>
 
 
   <div>
 <tr>
-    <td> <label for="email"> <b>E-mail </b> </label></td>
-    <td> <input type="varchar" size="25" id="email"></td>
+    <td> <label for="email"> <b>E-mail </b> <span class="req">*</span></label></td>
+    <td> <input type="varchar" size="25" id="email" required autocomplete="off"></td>
 </tr>
     </div>
     <div>
       <tr>
-        <td><label for="pwd"> <b>Password </b> </label></td>
-        <td><input type="password" size="25" id="pwd"></td>
+        <td><label for="pwd"> <b>Password </b> <span class="req">*</span></label></td>
+        <td><input type="password" size="25" id="pwd" required autocomplete="off"></td>
       </tr>
     </div>
     <div>
       <tr>
-        <td><label for="repwd"> <b> Re-enter Password </b> </label></td>
-        <td><input type="password" size="25" id="repwd"></td>
+        <td><label for="repwd"> <b> Re-enter Password<span class="req">*</span> </b> </label></td>
+        <td><input type="password" size="25" id="repwd" required autocomplete="off"></td>
       </tr>
     </div>
 
@@ -65,12 +66,16 @@
 
 <div>
   <tr>
-<td> <label for="pnumber"> <b>Phone number </b> </label></td>
-<td> <input type="varchar" size="25" id="pnumber"></td>
+<td> <label for="pnumber"> <b>Phone number </b><span class="req">*</span> </label></td>
+<td> <input type="varchar" size="25" id="pnumber" required autocomplete="off"></td>
 </tr>
 </div>
 
 </table>
+<div>
+<br>
+<input type="submit" value="Create account">
+</div>
           </fieldset>
 
     </form>
@@ -78,10 +83,9 @@
 
   </div>
 
-
 </body>
 
 
 </html>
 
-<?php include_once('footer.php'); ?>
+<?php include_once('Templates/footer.php'); ?>
