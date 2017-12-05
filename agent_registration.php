@@ -1,13 +1,16 @@
-<?php include_once('header.php'); ?>
+
 
 <html>
 
 <head>
 <title> Agent Registration  </title>
-<link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
 </head>
 
 <body>
+
+  <?php include_once('templates/header.php'); ?>
+
   <div  >
     <form class="form">
       <fieldset>
@@ -68,10 +71,10 @@
 
 
 
-
+ <?php include_once('templates/footer.php'); ?>
 </body>
 
 
 </html>
 
-<?php include_once('footer.php'); ?>
+
