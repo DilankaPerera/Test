@@ -1,19 +1,19 @@
-<<<<<<< HEAD
-<?php include_once('header.php');
-include("includes/db.php");
-?>
-
 <html>
 
 <head>
-<title> Agent Registration  </title>
-<link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
-<link href="css/font-awesome.css" rel="stylesheet">
-</head>
+
+  <?php include_once('header.php');
+  include("includes/db.php");
+  ?>
+
+  <title> Agent Registration  </title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+  <link href="css/font-awesome.css" rel="stylesheet">
+  </head>
 
 <body>
   <div  >
-    <form class="form">
+    <form>
       <fieldset>
 
           <legend> <b> Agent Registration <b> </legend>
