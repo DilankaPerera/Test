@@ -74,6 +74,38 @@
 </tr>
 </div>
 
+<div>
+
+  <tr>
+    <td><b>Address </b></td>
+  <td> </td>
+  <tr>
+  <tr>
+    <td> <label for="housenum">House Number <span class="req">*</span> </label> </td>
+    <td> <input type="varchar" size="30" id="housenum" required autocomplete="off"> </td>
+  </tr>
+
+  <tr>
+    <td> <label for="streetname">Street Name <span class="req">*</span> </label></td>
+    <td> <input type="varchar" size="30" id="streetname" required autocomplete="off"> </td>
+  </tr>
+
+  <tr>
+    <td> <label for="city">City <span class="req">*</span></label> </td>
+    <td> <input type="varchar" size="30" id="city" required autocomplete="off"> </td>
+  </tr>
+
+  <tr>
+    <td> <label for="country">Country <span class="req">*</span> </label></td>
+    <td> <input type="varchar" size="30" id="country" required autocomplete="off"> </td>
+  </tr>
+  <tr>
+    <td> <label for="pcode">Postal Code <span class="req">*</span> </label></td>
+    <td> <input type="varchar" size="30" id="pcode" required autocomplete="off"> </td>
+  </tr>
+
+</div>
+
 </table>
 <div>
 <br>
@@ -113,4 +145,3 @@ if(isset($_POST['register'])) {
     move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
 }
     ?>
-
