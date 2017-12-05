@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +6,7 @@
 
 
 	<link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
-	<link rel="stylesheet" href="css/bootstrap.css"/>
+	
 	<link href="css/font-awesome.css" rel="stylesheet">
 
 </head>
@@ -42,4 +41,4 @@
 
 </body>
 </html>
-=======
+
