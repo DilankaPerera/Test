@@ -1,5 +1,6 @@
-<!-- <div class="main_footer"> -->
+<link rel="stylesheet" href="css/bootstrap.css"/>
 
+<!-- Top footer -->
 	<div class="footertop">
 		<div class="container">
 			<div class="footer_grids">
@@ -42,13 +43,13 @@
 		</div>
 
 	</div>
+<!-- //Top footer -->
 
-	<div class="footer-bottom">
+<!-- bottom footer -->
 		<footer >
-			<div id="footer-inner">
+			<div id="footer-bottom">
 				<p>&copy; Copyright <a href="index.php">Gzone Technologies</a> &#124; All rights reserved </p>
 				<div class="clr"></div>
 			</div>
 		</footer>
-	</div>
-</div>
+
