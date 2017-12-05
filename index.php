@@ -5,7 +5,7 @@
 	<title>Gzone Technologies</title>
 
 
-	<link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+	<link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
 	
 	<link href="css/font-awesome.css" rel="stylesheet">
 

@@ -1,13 +1,16 @@
-<?php include_once('header.php'); ?>
-
 <html>
 
 <head>
 <title> Customer Registration  </title>
-<link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+<link rel="stylesheet" type="text/css" href="styles/styles.css" media="all"/>
+<link href="css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
+
+<?php include_once('templates/header.php'); ?>
+
+
   <div  >
     <form class="form">
       <fieldset>
@@ -100,11 +103,11 @@
   </div>
 
 
-
+<?php include_once('templates/footer.php'); ?>
 
 </body>
 
 
 </html>
 
-<?php include_once('footer.php'); ?>
+
