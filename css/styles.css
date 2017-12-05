@@ -1,3 +1,33 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 html, body{
     font-size: 100%;
     font-family: 'Open Sans', sans-serif;
@@ -41,7 +71,7 @@ h1, h2, h3, h4, h5, h6, a{
 	left: 50%;
 	width: 50%;
 	text-align: center;
-	padding: 6px 0;
+	padding: 5px 0;
 }
 ul{
 	margin: 0;
@@ -50,14 +80,14 @@ ul{
 .topword ul li{
 	display: inline-block;
 	padding: 0em 1em;
-	font-size: 14px;
+	font-size: 17px;
 }
 .topword ul li a{
 	font-size: 1em;
 	text-transform: uppercase;
 	color: white;
 	text-decoration: none;
-	font-weight: 500;
+	font-weight: 400;
 }
 
 .view-cart i.fa {
@@ -114,12 +144,94 @@ button.btn.btn-default.search:hover {
     background:#333;
 }
 
+/*content*/
+.main_content{
+	width: 100%;
+	height: 1200px;
+	background-color: #ffffff;
+	margin: auto;
+}
+.right_content{
+	width: 80%;
+	height: 1200px;
+	float: right;
+	background-color:#F2F3F4  ;
+}
+
+/*sidebar*/
+.sidebar{
+	width: 20%;
+	float: left;
+	height: 1200px;
+	background-color: #1ABC9C;
+}
+.sidebar_title{
+	text-align: center;
+	color: #212121;
+	padding: 15px;
+	font-size: 30px;
+	text-transform: uppercase;
+	font-size: 30px;
+	font-weight: 700;
+	border-bottom: solid;
+	border-color: #2b2a2a;
+	border-width: 2px;
+}
+/*lawran's block starts here*/
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  background: #86cbd6;;
+  color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #86cbd6;;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+.form {
+  background: rgba(33, 40, 47, 0.9);
+  padding: 40px;
+	border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+	max-width: 600px;
+	margin: 40px auto;
+
+}
+
+/*divide buttons horizontally */
+#formAlign_agent{
+	float: left;
+	margin: 200px 100px;
+}
+
+#formAlign_customer{
+	float: right;
+	margin: 200px 100px ;
+}
+
+
+
+/*lawran's block end here*/
+
+
 /*footer*/
-#footer-bottom{ 
-	margin:auto; 
-	text-align:center; 
+#footer-bottom{
+	margin:auto;
+	text-align:center;
 	padding:12px;
-	height: 50px; 
+	height: 50px;
 	width:100%;
 	background-color: #333232;
 }
@@ -187,89 +299,3 @@ i.fa.fa-arrow-right {
     -moz-column-width: 100px; /* Firefox */
     column-width: 100px;
 }
-
-
-/*content*/
-.main_content{
-	width: 100%;
-	height: 1200px;
-	background-color: #ffffff;
-	margin: auto;
-}
-.right_content{
-	width: 80%;
-	height: 1200px;
-	float: right;
-	background-color:#F2F3F4  ;
-}
-
-/*sidebar*/
-.sidebar{
-	width: 20%;
-	float: left;
-	height: 1200px;
-	background-color: #1ABC9C;
-}
-.sidebar_title{
-	text-align: center;
-	color: #212121;
-	padding: 15px;
-	font-size: 30px;
-	text-transform: uppercase;
-	font-size: 30px;
-	font-weight: 700;
-	border-bottom: solid;
-	border-color: #2b2a2a;
-	border-width: 2px;
-}
-
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: .1em;
-  background: #86cbd6;;
-  color: #ffffff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
-.button:hover, .button:focus {
-  background: #86cbd6;
-}
-
-.button-block {
-  display: block;
-  width: 100%;
-}
-.form {
-  background: rgba(33, 40, 47, 0.9);
-  padding: 40px;
-	border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-	max-width: 600px;
-	margin: 40px auto;
-
-}
-
-/*divide buttons horizontally */
-#formAlign_agent{
-	float: left;
-	margin: 200px 100px;
-}
-
-#formAlign_customer{
-	float: right;
-	margin: 200px 100px ;
-}
-
-
-
-
-
-
-
-

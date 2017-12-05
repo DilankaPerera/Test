@@ -1,4 +1,4 @@
-<?php include_once('header.php'); ?>
+<?php include_once('Templates/header.php'); ?>
 
 <html>
 
@@ -30,4 +30,4 @@
 
 </body>
 </html>
-<?php include_once('footer.php'); ?>
+<?php include_once('Templates/footer.php'); ?>
