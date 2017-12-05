@@ -1,6 +1,7 @@
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
+
 */
 
 html, body, div, span, applet, object, iframe,
@@ -21,6 +22,7 @@ time, mark, audio, video {
 	border: 0;
 	vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -203,10 +205,12 @@ button.btn.btn-default.search:hover {
   padding: 40px;
 	border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+	max-width: 600px;
+	margin: 40px auto;
 
 }
 
-/*divide buttons horizontally*/
+/*divide buttons horizontally */
 #formAlign_agent{
 	float: left;
 	margin: 200px 100px;
@@ -244,13 +248,13 @@ button.btn.btn-default.search:hover {
 }
 
 .clr { clear:both;
-	padding:0; 
-	margin:0; 
-	width:100%; 
-	font-size:0px; 
+	padding:0;
+	margin:0;
+	width:100%;
+	font-size:0px;
 	line-height:0px;
 } /*Clear both sides to assist with div alignment*/
-.footertop { 
+.footertop {
 	background:#2b2a2a;
 	padding: 5em 0 2em;
 	height: 350px;
