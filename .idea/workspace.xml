@@ -18,7 +18,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-148">
               <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1512464141415" expanded="true" signature="3128:3151" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,8 +38,8 @@
       <file leaf-file-name="agent_registration.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/agent_registration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="109" column="4" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+            <state relative-caret-position="-1457">
+              <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -180,12 +182,12 @@
       <updated>1512220142212</updated>
       <workItem from="1512220149605" duration="21023000" />
       <workItem from="1512359210294" duration="3419000" />
-      <workItem from="1512443252933" duration="5309000" />
+      <workItem from="1512443252933" duration="5410000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29751000" />
+    <option name="totallyTimeSpent" value="29852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -553,7 +555,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-148">
           <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1512464141415" expanded="true" signature="3128:3151" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -567,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/agent_registration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="109" column="4" lean-forward="false" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="4" />
+        <state relative-caret-position="-1457">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
           <folding />
         </state>
       </provider>

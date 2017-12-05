@@ -2,9 +2,6 @@
 <?php include_once('header.php');
 include("includes/db.php");
 ?>
-=======
-<?php include_once('Templates/header.php'); ?>
->>>>>>> origin/master
 
 <html>
 
@@ -98,7 +95,7 @@ include("includes/db.php");
 <?php include_once('footer.php'); ?>
 
 <?php
-if(isset($_POST['register'])){
+if(isset($_POST['register'])) {
 
 
     $ip = getIp();
@@ -114,9 +111,7 @@ if(isset($_POST['register'])){
     $c_address = $_POST['c_address'];
 
 
-    move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
-
+    move_uploaded_file($c_image_tmp, "customer/customer_images/$c_image");
+}
     ?>
-=======
-<?php include_once('Templates/footer.php'); ?>
->>>>>>> origin/master
+
