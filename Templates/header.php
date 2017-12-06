@@ -7,7 +7,7 @@
 		</ul>	
 	</div>
 	<div class="view-cart-main">
-		<a href="#"><button class="view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>	
+		<a href="cart.php"><button class="view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>	
 	</div>
 </div>
 <!--//Top header-->
@@ -15,7 +15,7 @@
 <!--Botttom header-->
 <div class="header_bottom">
 	<div class="container">
-		<a href="index.php"><img src="images/logo.png" id="logo"></a>
+		<a href="index.php"><img src="./images/logo.png" id="logo"></a>
 			<div class="search_bar">
 				<form method="get" action="#" enctype="multipart/form-data">
 					<input type="search" name="Search" placeholder="Search..." required="">

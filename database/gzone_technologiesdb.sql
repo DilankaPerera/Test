@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2017 at 04:12 PM
+-- Generation Time: Dec 06, 2017 at 04:48 AM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -19,21 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `gzone_technologiesdb`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `address`
---
-
-CREATE TABLE `address` (
-  `id` int(11) NOT NULL,
-  `house_number` int(11) NOT NULL,
-  `street_name` varchar(50) NOT NULL,
-  `city` varchar(50) NOT NULL,
-  `country` varchar(50) DEFAULT NULL,
-  `postal_code` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -60,12 +45,29 @@ CREATE TABLE `agent` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `agent_address`
+--
+
+CREATE TABLE `agent_address` (
+  `id` int(11) NOT NULL,
+  `house_number` varchar(50) NOT NULL,
+  `street_name` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `country` varchar(50) DEFAULT NULL,
+  `postal_code` varchar(45) NOT NULL,
+  `lat` float(10,6) NOT NULL,
+  `lng` float(10,6) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `agent_rating`
 --
 
 CREATE TABLE `agent_rating` (
-  `id` int(11) NOT NULL,
-  `contentt` varchar(100) DEFAULT NULL,
+  `agent_rating_id` int(11) NOT NULL,
+  `content` varchar(100) DEFAULT NULL,
   `agent_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -76,7 +78,7 @@ CREATE TABLE `agent_rating` (
 --
 
 CREATE TABLE `cash_on_delivery` (
-  `id` int(11) NOT NULL
+  `cash_on_delivery_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -108,9 +110,9 @@ CREATE TABLE `collection_point` (
 --
 
 CREATE TABLE `courier` (
-  `id` int(11) NOT NULL,
+  `courier_id` int(11) NOT NULL,
   `charge` decimal(10,0) NOT NULL,
-  `phone_number_id` int(11) NOT NULL,
+  `phone_number_id` varchar(45) NOT NULL,
   `courier_serviceprovider_id` int(11) NOT NULL,
   `address_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -122,12 +124,12 @@ CREATE TABLE `courier` (
 --
 
 CREATE TABLE `courier_serviceprovider` (
-  `id` int(11) NOT NULL,
-  `first_name` varchar(50) DEFAULT NULL,
+  `courier_serviceprovider_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
   `middle_name` varchar(50) DEFAULT NULL,
-  `last_name` varchar(50) DEFAULT NULL,
+  `last_name` varchar(50) NOT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `phone_number_id` int(11) NOT NULL
+  `phone_number_id` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -153,11 +155,26 @@ CREATE TABLE `customer` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `customer_address`
+--
+
+CREATE TABLE `customer_address` (
+  `id` int(11) NOT NULL,
+  `house_number` int(11) NOT NULL,
+  `street_name` varchar(50) NOT NULL,
+  `city` varchar(50) NOT NULL,
+  `country` varchar(50) DEFAULT NULL,
+  `postal_code` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `delivery_method`
 --
 
 CREATE TABLE `delivery_method` (
-  `id` int(11) NOT NULL,
+  `delivery_method_id` int(11) NOT NULL,
   `type` tinyint(4) NOT NULL,
   `collection_point_id` int(11) NOT NULL,
   `courier_id` int(11) NOT NULL,
@@ -181,23 +198,11 @@ CREATE TABLE `deposit_amount` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
---
-
-CREATE TABLE `login` (
-  `id` int(11) NOT NULL,
-  `user_name` varchar(50) NOT NULL,
-  `password` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `online_payment`
 --
 
 CREATE TABLE `online_payment` (
-  `id` int(11) NOT NULL,
+  `online_payment_id` int(11) NOT NULL,
   `cardholder_name` varchar(50) DEFAULT NULL,
   `card_number` int(11) DEFAULT NULL,
   `cvv` int(11) DEFAULT NULL,
@@ -239,23 +244,12 @@ CREATE TABLE `order_has_product` (
 --
 
 CREATE TABLE `payment_method` (
-  `id` int(11) NOT NULL,
+  `payment_method_id` int(11) NOT NULL,
   `type` tinyint(4) NOT NULL,
   `payment_amount` decimal(10,0) NOT NULL,
   `cash_on_delivery_id` int(11) NOT NULL,
   `online_payment_id` int(11) NOT NULL,
   `status` tinyint(4) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `phone_number`
---
-
-CREATE TABLE `phone_number` (
-  `id` int(11) NOT NULL,
-  `phone_number` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -284,7 +278,7 @@ CREATE TABLE `product` (
 --
 
 CREATE TABLE `product_rating` (
-  `id` int(11) NOT NULL,
+  `product_rating_id` int(11) NOT NULL,
   `content` varchar(100) DEFAULT NULL,
   `product_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -317,12 +311,6 @@ CREATE TABLE `shopping_cart` (
 --
 
 --
--- Indexes for table `address`
---
-ALTER TABLE `address`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `agent`
 --
 ALTER TABLE `agent`
@@ -332,17 +320,23 @@ ALTER TABLE `agent`
   ADD KEY `fk_agent_agent_address1_idx` (`agent_address_id`);
 
 --
+-- Indexes for table `agent_address`
+--
+ALTER TABLE `agent_address`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `agent_rating`
 --
 ALTER TABLE `agent_rating`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`agent_rating_id`),
   ADD KEY `fk_agent_rating_agent1_idx` (`agent_id`);
 
 --
 -- Indexes for table `cash_on_delivery`
 --
 ALTER TABLE `cash_on_delivery`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`cash_on_delivery_id`);
 
 --
 -- Indexes for table `category`
@@ -361,16 +355,14 @@ ALTER TABLE `collection_point`
 -- Indexes for table `courier`
 --
 ALTER TABLE `courier`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_courier_phone_number1_idx` (`phone_number_id`),
+  ADD PRIMARY KEY (`courier_id`),
   ADD KEY `fk_courier_courier_serviceprovider1_idx` (`courier_serviceprovider_id`);
 
 --
 -- Indexes for table `courier_serviceprovider`
 --
 ALTER TABLE `courier_serviceprovider`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_courier_serviceprovider_phone_number1_idx` (`phone_number_id`);
+  ADD PRIMARY KEY (`courier_serviceprovider_id`);
 
 --
 -- Indexes for table `customer`
@@ -381,10 +373,16 @@ ALTER TABLE `customer`
   ADD KEY `fk_customer_address1_idx` (`customer_address_id`);
 
 --
+-- Indexes for table `customer_address`
+--
+ALTER TABLE `customer_address`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `delivery_method`
 --
 ALTER TABLE `delivery_method`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`delivery_method_id`),
   ADD KEY `fk_delivery_method_collection_point1_idx` (`collection_point_id`),
   ADD KEY `fk_delivery_method_courier1_idx` (`courier_id`);
 
@@ -395,16 +393,10 @@ ALTER TABLE `deposit_amount`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `login`
---
-ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `online_payment`
 --
 ALTER TABLE `online_payment`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`online_payment_id`);
 
 --
 -- Indexes for table `order`
@@ -426,16 +418,10 @@ ALTER TABLE `order_has_product`
 -- Indexes for table `payment_method`
 --
 ALTER TABLE `payment_method`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_UNIQUE` (`id`),
+  ADD PRIMARY KEY (`payment_method_id`),
+  ADD UNIQUE KEY `id_UNIQUE` (`payment_method_id`),
   ADD KEY `fk_payment_cash_on_delivery1_idx` (`cash_on_delivery_id`),
   ADD KEY `fk_payment_online_payment1_idx` (`online_payment_id`);
-
---
--- Indexes for table `phone_number`
---
-ALTER TABLE `phone_number`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `product`
@@ -449,7 +435,7 @@ ALTER TABLE `product`
 -- Indexes for table `product_rating`
 --
 ALTER TABLE `product_rating`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`product_rating_id`),
   ADD KEY `fk_product_rating_product1_idx` (`product_id`);
 
 --
@@ -470,11 +456,6 @@ ALTER TABLE `shopping_cart`
 --
 
 --
--- AUTO_INCREMENT for table `address`
---
-ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `agent`
 --
 ALTER TABLE `agent`
@@ -483,12 +464,12 @@ ALTER TABLE `agent`
 -- AUTO_INCREMENT for table `agent_rating`
 --
 ALTER TABLE `agent_rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `agent_rating_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `cash_on_delivery`
 --
 ALTER TABLE `cash_on_delivery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cash_on_delivery_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `category`
 --
@@ -503,32 +484,32 @@ ALTER TABLE `collection_point`
 -- AUTO_INCREMENT for table `courier_serviceprovider`
 --
 ALTER TABLE `courier_serviceprovider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `courier_serviceprovider_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
   MODIFY `customer_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `customer_address`
+--
+ALTER TABLE `customer_address`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `delivery_method`
 --
 ALTER TABLE `delivery_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `delivery_method_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `deposit_amount`
 --
 ALTER TABLE `deposit_amount`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `login`
---
-ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `online_payment`
 --
 ALTER TABLE `online_payment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `online_payment_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `order`
 --
@@ -538,12 +519,7 @@ ALTER TABLE `order`
 -- AUTO_INCREMENT for table `payment_method`
 --
 ALTER TABLE `payment_method`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `phone_number`
---
-ALTER TABLE `phone_number`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `payment_method_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `product`
 --
@@ -553,7 +529,7 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `product_rating`
 --
 ALTER TABLE `product_rating`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_rating_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `segment`
 --
@@ -572,6 +548,8 @@ ALTER TABLE `shopping_cart`
 -- Constraints for table `agent`
 --
 ALTER TABLE `agent`
+  ADD CONSTRAINT `fk_agent_agent_address1` FOREIGN KEY (`agent_address_id`) REFERENCES `agent_address` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_agent_cart1` FOREIGN KEY (`cart_id`) REFERENCES `shopping_cart` (`shopping_cart_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_agent_deposit_amount1` FOREIGN KEY (`deposit_amount_id`) REFERENCES `deposit_amount` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -590,12 +568,13 @@ ALTER TABLE `collection_point`
 -- Constraints for table `courier`
 --
 ALTER TABLE `courier`
-  ADD CONSTRAINT `fk_courier_courier_serviceprovider1` FOREIGN KEY (`courier_serviceprovider_id`) REFERENCES `courier_serviceprovider` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_courier_courier_serviceprovider1` FOREIGN KEY (`courier_serviceprovider_id`) REFERENCES `courier_serviceprovider` (`courier_serviceprovider_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `customer`
 --
 ALTER TABLE `customer`
+  ADD CONSTRAINT `fk_customer_address1` FOREIGN KEY (`customer_address_id`) REFERENCES `customer_address` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_customer_cart1` FOREIGN KEY (`cart_id`) REFERENCES `shopping_cart` (`shopping_cart_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
@@ -603,14 +582,14 @@ ALTER TABLE `customer`
 --
 ALTER TABLE `delivery_method`
   ADD CONSTRAINT `fk_delivery_method_collection_point1` FOREIGN KEY (`collection_point_id`) REFERENCES `collection_point` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_delivery_method_courier1` FOREIGN KEY (`courier_id`) REFERENCES `courier` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_delivery_method_courier1` FOREIGN KEY (`courier_id`) REFERENCES `courier` (`courier_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `order`
 --
 ALTER TABLE `order`
-  ADD CONSTRAINT `fk_order_delivery_method1` FOREIGN KEY (`delivery_method_id`) REFERENCES `delivery_method` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_order_payment1` FOREIGN KEY (`payment_id`) REFERENCES `payment_method` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_order_delivery_method1` FOREIGN KEY (`delivery_method_id`) REFERENCES `delivery_method` (`delivery_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_order_payment1` FOREIGN KEY (`payment_id`) REFERENCES `payment_method` (`payment_method_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `order_has_product`
@@ -623,8 +602,8 @@ ALTER TABLE `order_has_product`
 -- Constraints for table `payment_method`
 --
 ALTER TABLE `payment_method`
-  ADD CONSTRAINT `fk_payment_cash_on_delivery1` FOREIGN KEY (`cash_on_delivery_id`) REFERENCES `cash_on_delivery` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `fk_payment_online_payment1` FOREIGN KEY (`online_payment_id`) REFERENCES `online_payment` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_payment_cash_on_delivery1` FOREIGN KEY (`cash_on_delivery_id`) REFERENCES `cash_on_delivery` (`cash_on_delivery_id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_payment_online_payment1` FOREIGN KEY (`online_payment_id`) REFERENCES `online_payment` (`online_payment_id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `product`
