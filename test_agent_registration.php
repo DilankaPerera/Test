@@ -5,14 +5,14 @@
 
 
 	<link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
-	
+
 	<link href="css/font-awesome.css" rel="stylesheet">
 
 </head>
 <body>
 
 	<!-- header -->
-	<?php include_once('templates/header.php'); ?>
+	<?php include_once('Templates/header.php'); ?>
 
 	<!-- content -->
 
@@ -23,7 +23,7 @@
 				<h2 class="heading_reg">Agent Registration</h2>
 
 				<div class="reg_form_grid">
-			
+
 					<form>
 					<fieldset>
 
@@ -93,13 +93,12 @@
 
    			    </div>
    			</div>
-   		</div>	
-	</div>	
+   		</div>
+	</div>
 
 
 	<!-- footer -->
-	<?php include_once('templates/footer.php'); ?>
+	<?php include_once('Templates/footer.php'); ?>
 
 </body>
 </html>
-

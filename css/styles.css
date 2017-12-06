@@ -1,8 +1,8 @@
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
-
 */
+
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -221,7 +221,63 @@ button.btn.btn-default.search:hover {
 	margin: 200px 100px ;
 }
 
+/*navigation bar css*/
 
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+}
+
+.navbar li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color on hover */
+.navbar li a:hover {
+    background-color: #555;
+    color: white;
+
+}
+
+/*dropdown*/
+
+.dropdown{
+display: none;
+
+}
+
+li:hover  .dropdown {
+	display: block;
+}
+
+li{
+  	position: relative;
+  }
+li .dropdown {
+  	position: absolute;
+
+  }
+/*positioning dropdown*/
+.dropdown {
+  left: 100% ;
+  top: 0% ;
+}
+
+/*adding hover effect*/
+
+li:hover{
+  background: #333 ;
+}
+
+li:hover > a {
+  color:#fff ;
+}
 
 /*lawran's block end here*/
 

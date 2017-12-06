@@ -10,10 +10,10 @@
 </head>
 <body>
 	<!-- header -->
-	<?php include_once('templates/header.php'); ?>
+	<?php include_once('Templates/header.php'); ?>
 
 	<div class="main_content">
-		
+
 
 
 
@@ -33,7 +33,7 @@
 
 
 	<!-- footer -->
-	<?php include_once('templates/footer.php'); ?>
+	<?php include_once('Templates/footer.php'); ?>
 
 </body>
 </html>
