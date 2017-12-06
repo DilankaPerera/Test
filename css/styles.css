@@ -240,7 +240,7 @@ button.btn.btn-default.search:hover {
 
 /* Change the link color on hover */
 .navbar li a:hover {
-    background-color: #555;
+    background-color: #333;
     color: white;
 
 }

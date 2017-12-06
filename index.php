@@ -18,7 +18,7 @@
 	<div class="main_content">
 
 		<!-- sidebar -->
-		<?php include_once('sidebar.php'); ?>
+		<?php include_once('Templates/navigation_bar.php'); ?>
 
 
 		<div class="right_content">
