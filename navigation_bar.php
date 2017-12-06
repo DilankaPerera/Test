@@ -26,9 +26,6 @@
         </ul>
 
         </div>
-
-
-
       </li>
       <li><a href="#">Electronics</a>
       <div class="dropdown" >
@@ -50,7 +47,25 @@
 
 
       </li>
-
+      <li><a href="#sports"><i class="fa fa-futbol-o"></i> Sports Goods</a>
+        <div class="dropdown">
+          <ul >
+            <li><a href="#">Cricket</a></li>
+            <li><a href="#" >Football</a></li>
+            <li><a href="#">Rugger</a></li>
+            <li><a href="#">Basketball</a></li>
+          </ul>
+        </div>
+      </li>
+      <li><a href="#motors"><i class="fa fa-car"></i> Motors</a>
+        <div class="dropdown">
+          <ul>
+            <li><a href="#">Cars & Vans</a></li>
+            <li><a href="#" >Motocycles</a></li>
+            <li><a href="#">Parts and Accessories</a></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </div>
 </div>
