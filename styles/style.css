@@ -365,20 +365,26 @@ i.fa.fa-arrow-right {
 .dropdown{
 display: none;
 
+
 }
 
 li:hover  .dropdown {
 	display: block;
+
 }
 
 li{
   	position: relative;
+
   }
 li .dropdown {
   	position: absolute;
 
+
   }
+
 /*positioning dropdown*/
+
 .dropdown {
   left: 100% ;
   top: 0% ;
