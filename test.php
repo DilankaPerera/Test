@@ -12,17 +12,17 @@
 	<!-- header -->
 	<?php include_once('Templates/header.php'); ?>
 
+
 	<div class="main_content">
+		<!-- sidebar -->
+		<?php include_once('sidebar.php'); ?>
+		
+		<div class="right_content">
+			
 
 
 
-
-
-
-
-
-
-
+		</div>
 
 
 
@@ -30,6 +30,13 @@
 
 
 	</div>
+
+
+
+
+
+
+
 
 
 	<!-- footer -->

@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6, a{
 	left: 50%;
 	width: 50%;
 	text-align: center;
-	padding: 20px 0;
+	padding: 8px 0;
 }
 ul{
 	margin: 0;
@@ -52,7 +52,7 @@ ul{
 .topword ul li{
 	display: inline-block;
 	padding: 0em 1em;
-	font-size: 17px;
+	font-size: 14px;
 }
 .topword ul li a{
 	font-size: 1em;
@@ -76,7 +76,7 @@ button.view-cart:focus{
 .view-cart-main{
 	float: right;
 	padding-right: 120px;
-	padding-top: 10px;
+	/*padding-top: 10px;*/
 	/*bottom: 5px;*/
 	/*position: relative;
 	padding: 1em 5em;*/
@@ -84,7 +84,7 @@ button.view-cart:focus{
 .search_bar{
 	float: right;
     width: 30%;
-    margin: 3em 5em 0;
+    margin: 3em 0 0;
 /*    margin: 0em 0 0em 0em;
     padding-top: 40px;
     padding-right: 2em;*/
@@ -201,28 +201,9 @@ i.fa.fa-arrow-right {
 .right_content{
 	width: 80%;
 	float: right;
+	height: 1200px;
 	background-color:#F2F3F4  ;
 }
-
-/*display products*/
-#product_box{
-
-}
-#single_product{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -235,8 +216,11 @@ i.fa.fa-arrow-right {
 .sidebar{
 	width: 20%;
 	float: left;
+	height: 1200px;
 	background-color: #1ABC9C;
 }
+
+
 .sidebar_title{
 	text-align: center;
 	color: #212121;
@@ -336,5 +320,11 @@ i.fa.fa-arrow-right {
 }
 
 
+/*display products*/
+#product_box{
 
+}
+#single_product{
+
+}
 

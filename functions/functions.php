@@ -2,25 +2,25 @@
 
 $conn = mysqli_connect($hostname, $username, $password, $database);
 
-// getting the categories
+getting the segments
 
-// function getCats(){
+function get_segment(){
 
-// 	global $conn;
+	global $conn;
 	
-// 	$get_cats = "select * from category";
+	$get_segment = "select * from segment";
 	
-// 	$run_cats = mysqli_query($con, $get_cats);
+	$run_segment= mysqli_query($con, $get_segment);
 	
-// 	while ($row_cats=mysqli_fetch_array($run_cats)){
+	while ($row_segment=mysqli_fetch_array($run_segment)){
 	
-// 		$cat_id = $row_cats['cat_id']; 
-// 		$cat_name = $row_cats['cat_title'];
+		$segment_id = $row_segment['segment_id']; 
+		$segment_name = $row_cats['segment_name'];
 	
-// 	echo "<li><a href='#'>$cat_name</a></li>";
+	echo "<li><a href='index.php?segment='$segment_id'>$segment_name</a></li>";
 	
-// 	}
-// }
+	}
+}
 
 
 
@@ -34,25 +34,40 @@ $conn = mysqli_connect($hostname, $username, $password, $database);
 
 
 
-// getting products from tables
+// getting products from tables by segment
 
-function getProduct(){
+function getSegProduct(){
+
+	if (!isset($_GET['segment'])) {
 
 	global $conn;
 
-	$get_product = "select * from product order by rand() LIMIT 0,6";
+	$get_seg_product = "select * from product where product_segment='$segment_id'";
 
-	$run_product = mysqli_query($conn, $get_product);
+	$run_seg_product = mysqli_query($conn, $get_seg_product);
 
-	while ($row_product=mysqli_fetch_array($run_product)) {
+	$count_seg_product = mysqli_num_rows($run_seg_product);
+
+	
+
+	while ($row_seg_product=mysqli_fetch_array($run_seg_product)) {
 		
-		$product_id = $row_product['product_id'];
-		$product_name = $row_product['product_name'];
-		$product_price = $row_product['product_price'];
-		$product_image = $row_product['product_image'];
-		$product_segment = $row_product['product_segment'];
-		$product_category= $row_product['product_category'];
-		$product_brand = $row_product['product_brand'];
+		$product_id = $row_seg_product['product_id'];
+		$product_name = $row_seg_product['product_name'];
+		$product_price = $row_seg_product['product_price'];
+		$product_image = $row_seg_product['product_image'];
+		$product_segment = $row_seg_product['product_segment'];
+		$product_category= $row_seg_product['product_category'];
+		$product_brand = $row_seg_product['product_brand'];
+
+
+		if ($count_seg_product==0) {
+
+		echo "<h2>There is no product in this segment</h2>";
+		
+		}
+
+		else{
 
 		echo "
 
@@ -66,16 +81,20 @@ function getProduct(){
 
 		</div>
 
-
-
 		";
-
-
-
+		}
 	}
-
-
+	}
 }
+
+
+//getting segments
+
+
+
+
+
+
 
 
 
