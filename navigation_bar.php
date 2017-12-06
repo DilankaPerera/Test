@@ -1,3 +1,18 @@
+
+	<?php include_once('Templates/header.php'); ?>
+
+<html>
+<head>
+<title> Navigation bar </title>
+<link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
+
+<link href="css/font-awesome.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
 <div class="sidebar">
 <div class="navbar">
     <ul>
@@ -41,7 +56,7 @@
                   </div>
                   </li>
       <li><a href="#">Other Products</a>
-        
+
 
 
 
@@ -69,4 +84,6 @@
     </ul>
   </div>
 </div>
-
+</body>
+</html>
+	<?php include_once('Templates/footer.php'); ?>
