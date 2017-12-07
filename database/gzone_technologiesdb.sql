@@ -19,7 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `gzone_technologiesdb`
 --
-
+CREATE DATABASE gzone_technologiesdb;
+USE gzone_technologiesdb;
 -- --------------------------------------------------------
 
 --
