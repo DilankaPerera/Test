@@ -348,7 +348,7 @@ i.fa.fa-arrow-right {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 268px;
+    width: 100%;
     background-color: #66CDAA;
 }
 
@@ -371,7 +371,7 @@ i.fa.fa-arrow-right {
 
 .dropdown{
 display: none;
-
+width: 80%;
 
 }
 
