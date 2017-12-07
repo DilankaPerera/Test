@@ -279,7 +279,13 @@ i.fa.fa-arrow-right {
     padding: 3em;
 	background:#F7F7F9;
 	margin:3em auto 0;
+
 }
+.reg_form_grid ul{
+  list-style-type: none;
+}
+
+
 .reg_form_grid input[type="submit"]{
 	outline: none;
     border: none;
@@ -354,6 +360,7 @@ i.fa.fa-arrow-right {
 }
 
 /* Change the link color on hover */
+
 .navbar li a:hover {
     background-color: #555;
     color: white;
@@ -392,11 +399,11 @@ li .dropdown {
 
 /*adding hover effect*/
 
-li:hover{
+.navbar li:hover{
   background: #333 ;
 }
 
-li:hover > a {
+.navbar li:hover > a {
   color:#fff ;
 }
 
