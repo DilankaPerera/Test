@@ -1,6 +1,6 @@
 <?php
 
-//include("../functions/dbconn.php")
+include("../includes/db.php")
 
 ?>
 
@@ -34,45 +34,55 @@
 			<tr>
 				<td>Product Category</td>
 				<td>
-					<!-- <input type="text" name="product_category"> -->
 					<select name="product_category" required>
 						<option>Select Category</option>
 						<?php
-						// $get_cats = "select * from category";
+						$get_cats = "select * from category";
 	
-						// $run_cats = mysqli_query($con, $get_cats);
+						$run_cats = mysqli_query($conn, $get_cats);
 	
-						// while ($row_cats=mysqli_fetch_array($run_cats)){
+						while ($row_cats=mysqli_fetch_array($run_cats)){
 	
-						// $cat_id = $row_cats['cat_id']; 
-						// $cat_name = $row_cats['cat_title'];
+						$cat_id = $row_cats['cat_id']; 
+						$cat_name = $row_cats['cat_name'];
 	
-						// echo "<option value="$cat_id">$cat_na</a></option>";
-	
-						// }
-
-
-
-						?>
-						
+						echo "<option value='$cat_id'>$cat_name</a></option>";	
+						}
+					?>						
 					</select>
-
-
-
-
 				</td>
 			</tr>
 
 			<tr>
 				<td>Product Segment</td>
-				<td><input type="text" name="product_segment" required></td>
+				<td>
+					<select name="product_segment" required>
+						<option>Select Segment</option>
+						<?php
+						$get_segment = "select * from segment";
+	
+						$run_segment = mysqli_query($conn, $get_segment);
+	
+						while ($row_segment=mysqli_fetch_array($run_segment)){
+	
+						$segment_id = $row_segment['segment_id']; 
+						$segment_name = $row_segment['segment_name'];
+	
+						echo "<option value='$segment_id'>$segment_name</a></option>";
+	
+						}
+						?>
+						
+					</select>
+
+				</td>
 			</tr>
 			
-			<tr>
+			<!-- <tr>
 				<td>Product Brand</td>
 				<td><input type="text" name="product_brand" required></td>
 			</tr>
-			
+			 -->
 			<tr>
 				<td>Product Description</td>
 				<td><textarea type="text" name="product_description" cols="30" rows="10"></textarea>
@@ -130,7 +140,7 @@
 		$product_name = $_POST['product_name'];
 		$product_category = $_POST['product_category'];
 		$product_segment = $_POST['product_segment'];
-		$product_brand = $_POST['product_brand'];
+		// $product_brand = $_POST['product_brand'];
 		$product_description = $_POST['product_description'];
 		$product_price = $_POST['product_price'];
 		$product_model = $_POST['product_model'];
@@ -140,18 +150,22 @@
 
 
 		// getting images
-		$product_image = $_FILE['product_image'] ['name'];
-		$product_image_tmp = $_POST['product_image']['tmp_name'];
+		$product_image = $_FILES['product_image'] ['name'];
+		$product_image_tmp = $_FILES['product_image']['tmp_name'];
 		
-		move_uploaded_file($product_image_tmp,"product_images/$product_image" )
+		move_uploaded_file($product_image_tmp,"product_images/$product_image" );
 
-		$insert_product = "insert into product (product_name,product_description, product_price, product_model, product_discount, product_segment, product_quantity, product_category,product_brand, product_keywords,product_image) value('$product_name','$product_description','$product_price','$product_model','$product_discount','$product_segmen','$product_quantity','$product_category','$product_brand','$product_keywords','$product_image')";
+		$insert_product = " INSERT INTO product (product_name,product_description, product_price, product_model, product_discount, product_segment, product_quantity, product_category, product_keywords,product_image) value('$product_name','$product_description','$product_price','$product_model','$product_discount','$product_segment','$product_quantity','$product_category','$product_keywords','$product_image')";
 
 		$insert_pro = mysqli_query($conn, $insert_product);
 
 		if ($insert_pro) {
 			echo "<script>alert(Product has been inserted)</script>";
-			echo "<script>window.open('insert_product.php','self')</script>";
+			echo "<script>window.open('insert_product.php','_self')</script>";
+		}
+
+		else{
+			die('Product not inserted: ' .mysql_error());
 		}
 
 
