@@ -8,17 +8,21 @@
 </head>
 
 <body>
-  <div class="reg_form_grid">
-    <h3 class="heading_reg">Log in</h3>
-    <ul>
-      <li> <label for="username"> Username  </label> </li>
-      <li> <input type="text" size="50" id="username"> </li>
+  <div class="main_content">
+    <div class="reg_form_grid">
+      <h3 class="heading_reg">Log in</h3>
+      <ul>
+        <li> <label for="username"> Username  </label> </li>
+        <li> <input type="text" size="50" id="username"> </li>
+        <br>
+        <li><label for="password"> Password  </label> </li>
+        <li><input type="password" size="50" id="paasword"></li>
+      </ul>
       <br>
-      <li><label for="password"> Password  </label> </li>
-      <li><input type="password" size="50" id="paasword"></li>
-    </ul>
-    <br>
-    <input type="submit"  value="Login">
+      <input type="submit"  value="Login">
+      <br>
+      New to Gzone ?<a href="select_user.php"> click here to sign up </a>
+    </div>
   </div>
 </body>
 
