@@ -9,11 +9,8 @@
 <body>
 	<div class="main_content">
 		<form class="form">
-<<<<<<< HEAD
 			<h> Sign up as ? </h>
-=======
 			<h2 class="heading_reg"> Sign up as  </h2>
->>>>>>> origin/master
 				<hr>
 				<a href="test_agent_registration.php">An Agent</a>
 				<a href="test_customer_registration.php">A Customer</a>

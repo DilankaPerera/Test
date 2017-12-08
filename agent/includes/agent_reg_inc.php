@@ -36,8 +36,8 @@ if(isset($_POST['register'])) {
 
             }
             else{
-                //$sql = "SELECT * FROM agent WHERE agent_username='$uname'";
-                $sql = "SELECT agent_username FROM agent WHERE agent_username='$uname' UNION SELECT customer_username FROM customer WHERE customer_username='$uname'";
+                //$sql = "SELECT agent_username FROM agent WHERE agent_username='$uname' UNION SELECT customer_username FROM customer WHERE customer_username='$uname'";
+                $sql = "SELECT username FROM user WHERE username='$uname'";
                 $result = mysqli_query($conn, $sql);
                 $result_check = mysqli_num_rows($result);
 
@@ -52,10 +52,15 @@ if(isset($_POST['register'])) {
                     //hashing the password
                     $hash_pwd = password_hash($pwd,PASSWORD_DEFAULT);
                     //inset the user into database
-                    $insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
-                    mysqli_query($conn, $insert_a);
+                    //$insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
+                    //mysqli_query($conn, $insert_a);
+                    $insert_a = "INSERT INTO user(username,password,user_role_id)VALUES('$uname','$hash_pwd','3')";
+                    $result = mysqli_query($conn, $insert_a);
+                    $insert_a = "INSERT INTO agent(agent_email,status,user_username) VALUES ('$email','pending','$uname')";
+                    $result = mysqli_query($conn, $insert_a);
+
                     echo "<script language=\"JavaScript\">\n";
-                    echo "alert('You have been registered successfully');\n";
+                    echo "alert('Your request have been sent successfully');\n";
                     echo "window.location='/Test/index.php'";
                     echo "</script>";
                     }
