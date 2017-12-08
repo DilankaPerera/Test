@@ -84,10 +84,8 @@ button.view-cart:focus{
 .search_bar{
 	float: right;
     width: 30%;
-    margin: 3em 0 0;
-/*    margin: 0em 0 0em 0em;
-    padding-top: 40px;
-    padding-right: 2em;*/
+   /* margin: 2.5em 0 0;*/
+   padding-top: 2.5em;
 }
 .search_bar input[type="search"] {
     width: 83%;
@@ -108,7 +106,7 @@ button.view-cart:focus{
 }
 button.btn.btn-default.search {
     background: #1ABC9C;
-    padding: 11px 12px 11px;
+    padding: 12px;
     float: right;
     outline: none;
     border: none;
@@ -118,6 +116,14 @@ button.btn.btn-default.search:hover {
 }
 
 /*footer*/
+/*.footer_main{
+  position: fixed;
+  left: o;
+  bottom: o;
+  width: 100%;
+
+}*/
+
 #footer-bottom{
 	margin:auto;
 	text-align:center;
@@ -194,14 +200,14 @@ i.fa.fa-arrow-right {
 /*content*/
 .main_content{
 	width: 100%;
-	height: 1200px;  /*height should be auto*/
+	height: 1500px;  /*height should be auto*/
 	background-color: #ffffff;
 	margin: auto;
 }
 .right_content{
 	width: 80%;
 	float: right;
-	height: 1200px;
+	height: 1500px;
 	background-color:#F2F3F4  ;
 }
 
@@ -212,7 +218,7 @@ i.fa.fa-arrow-right {
 .sidebar{
 	width: 20%;
 	float: left;
-	height: 1200px;
+	height: 1500px;
 	background-color: #1ABC9C;
 }
 
@@ -785,3 +791,92 @@ li .dropdown {
 
 
 /*lawran's block end here*/
+
+
+/*display products starts*/
+#product_box{
+  height: 1000px;   /*should be auto*/
+  text-align: center;
+  margin: 50px;
+
+}
+#single_product{
+  float: left;
+  margin-left: 20px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+
+}
+.shopnow button{
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+}
+
+.shopnow button:hover{
+  background-color: #555;
+  color: white;
+}
+.shopnow{
+  text-align: center;
+  position: absolute;
+  top: 45%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  color: white;
+
+}
+
+
+
+
+
+/*display products ends*/
+
+.frontimg{
+  height: 25%;
+  background-color: #2b2a2a;
+  margin: 10 20 0 20;
+}
+
+/*pagination start*/
+
+.pagination{
+    margin:0;
+    padding:0;
+}
+.pagination li{
+    display: inline;
+    padding: 6px 10px 6px 10px;
+    border: 1px solid #ddd;
+    margin-right: -1px;
+    font: 13px/20px Arial, Helvetica, sans-serif;
+    background: #FFFFFF;
+}
+.pagination li a{
+    text-decoration:none;
+    color: rgb(89, 141, 235);
+}
+.pagination li.first {
+    border-radius: 5px 0px 0px 5px;
+}
+.pagination li.last {
+    border-radius: 0px 5px 5px 0px;
+}
+.pagination li:hover{
+    background: #EEE;
+}
+
+.pagination li.current {
+    background: #89B3CC;
+    border: 1px solid #89B3CC;
+    color: #FFFFFF;
+}
+
+/*pagination end*/

@@ -2,7 +2,8 @@
 <div class="header-top">
 	<div class="topword">
 		<ul>
-			<li><a href="#"> Create Account </a></li>
+			<li><a href="#"> Be a Customer  </a></li>
+			<li><a href="#"> Be an Agent </a></li>
 			<li><a href="#">Login</a></li>		
 		</ul>	
 	</div>
@@ -17,10 +18,10 @@
 	<div class="container">
 		<a href="index.php"><img src="./images/logo.png" id="logo"></a>
 			<div class="search_bar">
-				<form method="get" action="#" enctype="multipart/form-data">
-					<input type="search" name="Search" placeholder="Search..." required="">
+				<form method="get" action="results.php" enctype="multipart/form-data">
+					<input type="search" name="user_query" placeholder="Search..." required="">
 					<!-- <input type="submit" name="Search" value="Search"> -->
-					<button type="submit" class="btn btn-default search" aria-label="Left Align">
+					<button type="submit" name="search" value="Search" class="btn btn-default search" aria-label="Left Align">
 					<i class="fa fa-search" aria-hidden="true"> </i>
 					</button>
 				</form>	

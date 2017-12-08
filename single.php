@@ -1,3 +1,10 @@
+<?php
+
+include('includes/db.php');
+
+?>
+
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,16 +18,17 @@
 <body>
 
 	<!-- header -->
-	<?php include_once('templates/header.php'); ?>
+	<?php include_once('Templates/header.php'); ?>
 
 	<!-- content -->
 
 	<div class="main_content">
 
 		<!-- sidebar -->
-		<?php include_once('sidebar.php'); ?>
+		<?php include_once('Templates/navigation_bar.php'); ?>
 
 		<div class="right_content">
+			<div id="product_box">
 
 			<?php
 
@@ -54,6 +62,8 @@
 							<p> $product_price </p>
 							<p>$product_descrption</p>
 
+							<a href='index.php' style='float:left;'></a>
+
 						  
 							<a href='index.php?product_id=$product_id'><button style='float:right'>Add to Cart></a>
 
@@ -73,13 +83,13 @@
 
 
 
-
+		</div>
 
 	</div>
 
 
 	<!-- footer -->
-	<?php include_once('templates/footer.php'); ?>
+	<?php include_once('Templates/footer.php'); ?>
 	
 
 </body>

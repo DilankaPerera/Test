@@ -1,3 +1,11 @@
+<?php
+
+include('functions/functions.php');
+include('includes/db.php');
+
+
+?>
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -20,12 +28,47 @@
 		<!-- sidebar -->
 		<?php include_once('Templates/navigation_bar.php'); ?>
 
+			<div class="right_content">
+				<div class="frontimg">
+					<div class="shopnow">
+						<h1>Explore with Exclusive Shopping Experiences</h1>
+						<button>SHOP NOW</button>
+						
+					</div>
+					
 
-		<div class="right_content">
+
+
+				</div>
+
+				<div id="product_box">
+
+					<?php getProduct(); ?>
+
+					
+					
+
+
+				</div>
 
 
 
-		</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div>
 
 
 
