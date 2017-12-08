@@ -53,7 +53,12 @@ if(isset($_POST['register'])) {
                     $hash_pwd = password_hash($pwd,PASSWORD_DEFAULT);
                     //inset the user into database
                     $insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
-                    $result = mysqli_query($conn, $insert_a);
+                    mysqli_query($conn, $insert_a);
+                    echo "<script language=\"JavaScript\">\n";
+                    echo "alert('You have been registered successfully');\n";
+                    echo "window.location='/Test/index.php'";
+                    echo "</script>";
+                    }
                 }
 
             }
@@ -64,7 +69,7 @@ if(isset($_POST['register'])) {
     //move_uploaded_file($a_image_tmp, "customer/customer_images/$image");
 
 
-}
+
 
 else{
     header("Location: ../../test_agent_registration.php");
