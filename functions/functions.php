@@ -91,7 +91,7 @@ function getProduct(){
 
 	global $conn;
 
-	$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id " ; 
+	$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id order by RAND() LIMIT 0,6 " ; 
 
 	$run_product = mysqli_query($conn, $get_product);
 
