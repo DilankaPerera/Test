@@ -33,9 +33,10 @@
 			    <li><input type="password" size="50" name="repwd" required autocomplete="off"></li>
 				</ul>
 				<br>
-				<input type="submit" name="register" value="Register">
+				<form action="index.php" method="get">
+				<input type="submit" name="register" value="Register"></form>
 				<br>
-				Already have an account?  <a href="login.php"> Sign up </a>
+				Already have an account?  <a href="login.php"> Sign in </a>
 			</div>
 		</div>
 	</div>

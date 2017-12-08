@@ -37,7 +37,7 @@
 				<br>
 				<input type="submit" name = "register" value="Register">
 				<br>
-				Already have an account?  <a href="login.php"> Sign up </a>
+				Already have an account?  <a href="login.php"> Sign in </a>
 			</div>
 		</div>
 	</div>

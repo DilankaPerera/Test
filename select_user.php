@@ -8,17 +8,16 @@
 </head>
 <body>
 	<div class="main_content">
-		<form class="form">
-<<<<<<< HEAD
-			<h> Sign up as ? </h>
-=======
-			<h2 class="heading_reg"> Sign up as  </h2>
->>>>>>> origin/master
-				<hr>
+		<div class="reg">
+
+		<h2 class="heading_reg"> Sign up as  </h2>
+<form class="form">
+
 				<a href="test_agent_registration.php">An Agent</a>
 				<a href="test_customer_registration.php">A Customer</a>
 				<form>
 				</div>
+			</div>
 			</body>
 </html>
 <?php include_once('Templates/footer.php'); ?>

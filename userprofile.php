@@ -9,64 +9,68 @@
 
 <body>
   <div class="main_content">
-    <form class="reg_form_grid" id="userprofileheight">
-      <h2 class="heading_reg"> My Gzone </h2>
-      <br>
-      <table class="tablestyles">
-        <tr>
-          <td > <b>First Name  </b>  </td>
-          <td > :  </td>
-        </tr>
+    <div class="reg">
+      <div class="container">
+        <h2 class="heading_reg"> My Gzone </h2>
+        <form class="reg_form_grid" >
+          <br>
+          <table class="tablestyles">
+            <tr>
+              <td > <b>First Name  </b>  </td>
+              <td > :  </td>
+            </tr>
 
-        <tr>
-          <td ><b> Last Name  </b> </td>
-          <td >: </td>
-        </tr>
+            <tr>
+              <td ><b> Last Name  </b> </td>
+              <td >: </td>
+            </tr>
 
-        <tr >
-          <td><b>E-mail  </b></td>
-          <td > :  </td>
-        </tr>
+            <tr>
+              <td><b>E-mail  </b></td>
+              <td > :  </td>
+            </tr>
 
-        <tr >
-          <td > <b>Phone number </b></td>
-          <td>: </td>
-        </tr>
+            <tr>
+              <td > <b>Phone number </b></td>
+              <td>: </td>
+            </tr>
 
-        <tr >
-          <td ><b> <u>Address </u></b></td>
-          <td> </td>
-        </tr>
+            <tr>
+              <td ><b> <u>Address </u></b></td>
+              <td> </td>
+            </tr>
 
-        <tr >
-          <td > House Number  </td>
-          <td> :  </td>
-        </tr>
+            <tr>
+              <td > House Number  </td>
+              <td> :  </td>
+            </tr>
 
-        <tr >
-          <td > Street Name  </td>
-          <td> :  </td>
-        </tr>
+            <tr>
+              <td > Street Name  </td>
+              <td> :  </td>
+            </tr>
 
-        <tr >
-          <td > City </td>
-          <td> :  </td>
-        </tr>
+            <tr>
+              <td > City </td>
+              <td> :  </td>
+            </tr>
 
-        <tr>
-          <td >Country  </td>
-          <td> : </td>
-        </tr>
+            <tr>
+              <td >Country  </td>
+              <td> : </td>
+            </tr>
 
-        <tr>
-          <td>Postal Code </td>
-          <td> : </td>
-        </tr>
+            <tr>
+              <td>Postal Code </td>
+              <td> : </td>
+            </tr>
+          </div>
+        </table>
+        <br>
+        <div class="edituserbtn" >
+          <a href="editprofile.php">Edit Profile</a>
+        </div>
       </div>
-    </table>
-    <br>
-    <div class="edituserbtn" >
-      <a href="editprofile.php">Edit Profile</a>
     </div>
   </form>
 </div>

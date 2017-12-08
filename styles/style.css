@@ -315,11 +315,13 @@ i.fa.fa-arrow-right {
   cursor: pointer;
   display: inline;
   margin: auto 35px;
+
 }
 
 .form a:hover {
-  background-color:#1ABC9C;
+  background-color:#333;
   text-decoration: none;
+  color: white;
 
 }
 
@@ -481,13 +483,13 @@ li .dropdown {
   width:100% ;
   background-color:#66CDAA;
   text-align: center;
-  padding:5px ;
+  padding:4px;
 
 }
 
 .edituserbtn a {
 
-  padding:5px;
+  padding:5px 80px;
   font-size:15px;
   color: white;
   cursor: pointer;
