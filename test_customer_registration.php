@@ -17,7 +17,7 @@
     <form class = "register-form" action = "customer/includes/customer_reg_inc.php" method="POST">
 	<div class="reg">
 		<div class="container">
-			<h2 class="heading_reg">Cutstomer Registration</h2>
+			<h2 class="heading_reg">Customer Registration</h2>
 			<div class="reg_form_grid">
 				<ul>
 					<li><label for="uname"> <b> Username <span class="req">*</span></b> </label></li>

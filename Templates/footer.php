@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="css/bootstrap.css"/>
 
 <!-- Top footer -->
+<!-- <div class="footer_main"> -->
 	<div class="footertop">
 		<div class="container">
 			<div class="footer_grids">
@@ -53,3 +54,5 @@
 			</div>
 		</footer>
 
+<!-- </div>
+ -->
