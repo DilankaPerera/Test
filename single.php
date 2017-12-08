@@ -37,42 +37,44 @@ include('includes/db.php');
 
 				$prod_id = $_GET['product_id'];
 			
-				$get_product = "select * from product where  product_id=''$prod_id'";
+				$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id WHERE product_id='$prod_id' " ; 
 
 				$run_product = mysqli_query($conn, $get_product);
 
-				while ($row_product=mysqli_fetch_array($run_product)) {
-		
+
+
+				while ($row_product=mysqli_fetch_array($run_product)) {	
+
 					$product_id = $row_product['product_id'];
 					$product_name = $row_product['product_name'];
 					$product_price = $row_product['product_price'];
 					$product_image = $row_product['product_image'];
-					$product_segment = $row_product['product_segment'];
-					$product_category= $row_product['product_category'];
-					$product_brand = $row_product['product_brand'];
-					$product_descrption = $row_product['product_descrption'];
-
-
+					$product_segment = $row_product['segment_name'];
+					$product_category= $row_product['cat_name'];
+					$product_description = $row_product['product_description'];
+					// $product_brand = $row_product['product_brand'];	
 
 					echo "
 
 						<div id='single_product'>
-							<h3>$product_name<h3>
-							<img src='admin_area/product_images/$product_image' width='400' height='300'>
-							<p> $product_price </p>
-							<p>$product_descrption</p>
 
-							<a href='index.php' style='float:left;'></a>
+							<h4>$product_name</h4>
 
-						  
-							<a href='index.php?product_id=$product_id'><button style='float:right'>Add to Cart></a>
+							<img src='admin_area/product_images/$product_image' width='100' height='100' />
+
+							<p><b> Price: $product_price </b></p>
+
+							<p> $product_description</p>
+
+							<a href='index.php' style='float:left;' >Go Back</a>
+							
+							<a href='index.php?product_id=$product_id'><button style='float:right'>Add to Cart</button></a>
 
 						</div>
 
-						";
+			";	
+	}
 
-
-			    }
 			}
 			
 			?>

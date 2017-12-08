@@ -115,11 +115,13 @@ function getProduct(){
 				<div id='single_product'>
 
 					<h4>$product_name</h4>
+
 					<img src='admin_area/product_images/$product_image' width='100' height='100' />
-
-
-
-
+					<p><b> Price: $product_price </b></p>
+					
+					<a href='single.php?product_id=$product_id' style='float:left;'>Details</a>
+					
+					<a href='index.php?add_cart=$product_id'><button style='float:right'>Add to Cart</button></a>
 
 				</div>
 
