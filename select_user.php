@@ -9,7 +9,7 @@
 <body>
 	<div class="main_content">
 		<form class="form">
-			<h2> Sign up as ? </h>
+			<h> Sign up as ? </h>
 				<hr>
 				<a href="test_agent_registration.php">An Agent</a>
 				<a href="test_customer_registration.php">A Customer</a>

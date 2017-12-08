@@ -55,9 +55,10 @@ if(isset($_POST['register'])) {
                     //inset the user into database
                     $insert_a = "INSERT INTO customer(customer_email,customer_password,customer_username)VALUES('$email','$hash_pwd','$uname')";
                     $result = mysqli_query($conn, $insert_a);
-                    if (!$result) {
-                        die(mysqli_error($conn));
-                    }
+                    echo "<script language=\"JavaScript\">\n";
+                    echo "alert('You have been registered successfully');\n";
+                    echo "window.location='/Test/index.php'";
+                    echo "</script>";
                 }
 
             }

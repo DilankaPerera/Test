@@ -1,9 +1,10 @@
+
 <!--Top header-->
 <div class="header-top">
 	<div class="topword">
 		<ul>
-			<li><a href="#"> Create Account </a></li>
-			<li><a href="#">Login</a></li>		
+			<li><a href="select_user.php"> Create Account </a></li>
+			<li><a href="login.php">Login</a></li>
 		</ul>	
 	</div>
 	<div class="view-cart-main">
