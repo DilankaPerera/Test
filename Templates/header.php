@@ -1,3 +1,21 @@
+<?php
+session_start();
+if(isset($_SESSION['SESS_CHANGEID']) == TRUE) {
+    session_unset();
+    session_regenerate_id();
+}
+
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$database = "gzone_technologiesdb";
+$config_basedir = "index.php";
+
+// Create connection
+$conn = mysqli_connect($hostname,$username,$password,$database);
+
+?>
+
 
 <!--Top header-->
 <div class="header-top">
@@ -6,7 +24,16 @@
 
 			<li><a href="#"> Be a Customer  </a></li>
 			<li><a href="#"> Be an Agent </a></li>
-			<li><a href="#">Login</a></li>		
+
+            <?php
+            if(isset($_SESSION['SESS_LOGGEDIN']) == TRUE){
+                echo "Logged in as <strong>" . $_SESSION['SESS_USERNAME']. "</strong>[<a href='logout.php'>logout</a>]";
+    }
+
+            else {
+                echo "<li><a href='../login.php'>Login</a></li>";
+            }
+?>
 
 		</ul>	
 	</div>
