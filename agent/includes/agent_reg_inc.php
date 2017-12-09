@@ -36,11 +36,9 @@ if(isset($_POST['register'])) {
 
             }
             else{
-                //$sql = "SELECT * FROM agent WHERE agent_username='$uname'";
-                $sql = "SELECT agent_username FROM agent WHERE agent_username='$uname' UNION SELECT customer_username FROM customer WHERE customer_username='$uname'";
+                $sql = "SELECT * FROM agent WHERE agent_username='$uname'";
                 $result = mysqli_query($conn, $sql);
                 $result_check = mysqli_num_rows($result);
-
 
                 if($result_check>0){
                     echo "<script language=\"JavaScript\">\n";
@@ -53,12 +51,7 @@ if(isset($_POST['register'])) {
                     $hash_pwd = password_hash($pwd,PASSWORD_DEFAULT);
                     //inset the user into database
                     $insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
-                    mysqli_query($conn, $insert_a);
-                    echo "<script language=\"JavaScript\">\n";
-                    echo "alert('You have been registered successfully');\n";
-                    echo "window.location='/Test/index.php'";
-                    echo "</script>";
-                    }
+                    $result = mysqli_query($conn, $insert_a);
                 }
 
             }
@@ -69,7 +62,7 @@ if(isset($_POST['register'])) {
     //move_uploaded_file($a_image_tmp, "customer/customer_images/$image");
 
 
-
+}
 
 else{
     header("Location: ../../test_agent_registration.php");

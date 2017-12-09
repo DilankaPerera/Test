@@ -3,14 +3,11 @@
 <div class="header-top">
 	<div class="topword">
 		<ul>
-<<<<<<< HEAD
-			<li><a href="select_user.php"> Create Account </a></li>
-			<li><a href="login.php">Login</a></li>
-=======
+
 			<li><a href="#"> Be a Customer  </a></li>
 			<li><a href="#"> Be an Agent </a></li>
 			<li><a href="#">Login</a></li>		
->>>>>>> origin/master
+
 		</ul>	
 	</div>
 	<div class="view-cart-main">

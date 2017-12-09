@@ -101,7 +101,7 @@ button.view-cart:focus{
     -moz-transition: 0.5s all;
 }
 .search_bar  i.fa.fa-search {
-    font-size: 17px;
+  font-size: 17px;
 	color:#fff;
 }
 button.btn.btn-default.search {
@@ -223,7 +223,7 @@ i.fa.fa-arrow-right {
 }
 
 
-.sidebar_title{
+/*.sidebar_title{
 	text-align: center;
 	color: #212121;
 	padding: 15px;
@@ -234,7 +234,7 @@ i.fa.fa-arrow-right {
 	border-bottom: solid;
 	border-color: #2b2a2a;
 	border-width: 2px;
-}
+}*/
 
 /*registration_form*/
 
@@ -393,121 +393,6 @@ li .dropdown {
 
 /*lawran's block end here*/
 
-/*lawran's block starts here*/
-.form {
-  padding: 20px;
-	border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-	max-width: 600px;
-	margin: 40px auto;
-
-
-}
-
-
-/*navigation bar css*/
-
-.navbar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    background-color: #66CDAA;
-}
-
-.navbar li a {
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color on hover */
-
-.navbar li a:hover {
-    background-color: #555;
-    color: white;
-
-}
-
-/*dropdown*/
-
-.dropdown{
-display: none;
-width: 80%;
-
-}
-
-li:hover  .dropdown {
-	display: block;
-
-}
-
-li{
-  	position: relative;
-
-  }
-li .dropdown {
-  	position: absolute;
-
-
-  }
-
-/*positioning dropdown*/
-
-.dropdown {
-  left: 100% ;
-  top: 0% ;
-}
-
-/*adding hover effect*/
-
-.navbar li:hover{
-  background: #333 ;
-}
-
-.navbar li:hover > a {
-  color:#fff ;
-}
-
-/*user profile table properties*/
-.tablestyles td{
-  padding :5px ;
-  font-size: 15px;
-
-}
-/*edit user button*/
-
-.edituserbtn {
-
-  width:100% ;
-  background-color:#66CDAA;
-  text-align: center;
-  padding:4px;
-
-}
-
-.edituserbtn a {
-
-  padding:5px 80px;
-  font-size:15px;
-  color: white;
-  cursor: pointer;
-  display: inline;
-
-}
-
-.edituserbtn a:hover {
-
-  background-color:#1ABC9C;
-  text-decoration: none;
-
-}
-
-
-/*lawran's block end here*/
-
-
 /*display products starts*/
 #product_box{
   height: 1000px;   /*should be auto*/
@@ -523,6 +408,9 @@ li .dropdown {
   border-width: 1px;
 
 }
+
+ /*display products end here*/
+
 .shopnow button{
   border: none;
   outline: 0;
@@ -538,7 +426,7 @@ li .dropdown {
   background-color: #555;
   color: white;
 }
-.shopnow{
+.shopnow {
   text-align: center;
   position: absolute;
   top: 45%;
@@ -562,7 +450,7 @@ li .dropdown {
 
 /*pagination start*/
 
-.pagination{
+/*.pagination{
     margin:0;
     padding:0;
 }
@@ -593,5 +481,5 @@ li .dropdown {
     border: 1px solid #89B3CC;
     color: #FFFFFF;
 }
-
+*/
 /*pagination end*/
