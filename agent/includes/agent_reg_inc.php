@@ -36,11 +36,9 @@ if(isset($_POST['register'])) {
 
             }
             else{
-                //$sql = "SELECT agent_username FROM agent WHERE agent_username='$uname' UNION SELECT customer_username FROM customer WHERE customer_username='$uname'";
-                $sql = "SELECT username FROM user WHERE username='$uname'";
+                $sql = "SELECT * FROM agent WHERE agent_username='$uname'";
                 $result = mysqli_query($conn, $sql);
                 $result_check = mysqli_num_rows($result);
-
 
                 if($result_check>0){
                     echo "<script language=\"JavaScript\">\n";
@@ -52,18 +50,8 @@ if(isset($_POST['register'])) {
                     //hashing the password
                     $hash_pwd = password_hash($pwd,PASSWORD_DEFAULT);
                     //inset the user into database
-                    //$insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
-                    //mysqli_query($conn, $insert_a);
-                    $insert_a = "INSERT INTO user(username,password,user_role_id)VALUES('$uname','$hash_pwd','3')";
+                    $insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
                     $result = mysqli_query($conn, $insert_a);
-                    $insert_a = "INSERT INTO agent(agent_email,status,user_username) VALUES ('$email','pending','$uname')";
-                    $result = mysqli_query($conn, $insert_a);
-
-                    echo "<script language=\"JavaScript\">\n";
-                    echo "alert('Your request have been sent successfully');\n";
-                    echo "window.location='/Test/index.php'";
-                    echo "</script>";
-                    }
                 }
 
             }
@@ -74,7 +62,7 @@ if(isset($_POST['register'])) {
     //move_uploaded_file($a_image_tmp, "customer/customer_images/$image");
 
 
-
+}
 
 else{
     header("Location: ../../test_agent_registration.php");
