@@ -15,10 +15,16 @@
 
 <!-- content -->
 <div class="main_content">
-	<h3 style="text-align :center;">become an <b>Agent</b> of <b>Gzone Technologies</b> & earn profit,</h3>
-	 <p style="text-align :center;">learn more</p>
-    <form class = "register-form" action = "includes/agentval.php" method="POST">
 	<div class="reg">
+	<h3 style="text-align :center;">Become an <b>Agent</b> of <b>Gzone Technologies</b> & earn profit,</h3>
+
+	 <p style="text-align :center;">At GZone Technologies, <br>
+		 we aim to cultivate a culture of collection points among our customers. <br>
+			You could be a part of this process through registering with with us as an agent.<br>
+			You could also earn a commission from participating in the process! </p>
+
+    <form class = "register-form" action = "includes/agentval.php" method="POST">
+
 		<div class="container">
 			<h2 class="heading_reg">Agent Registration</h2>
 			<div class="reg_form_grid">
@@ -43,6 +49,9 @@
 					<br>
 					<li><label for="lic"> <b>License No.</b></label></li>
 					<li><input type="varchar" size="50" id="lic" name="lic"></li>
+					<br>
+					<li><label for="pic"> <b>Insert Your Picture</b></label></li>
+					<li><input type="file" id="pic" name="pic" accept="image/*"></li>
 					<br>
 					<li><label for="pwd"> <b>Password </b> <span class="req">*</span></label></li>
 			    <li><input type="password" size="50" id="pwd" name="pwd"  required autocomplete="off"></li>

@@ -408,6 +408,14 @@ li .dropdown {
   color:#fff ;
 }
 
+/*delte user inputs*/
+
+#deleteuser{
+
+  display: inline;
+
+}
+
 /*lawran's block end here*/
 
 /*display products starts*/

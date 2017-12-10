@@ -9,9 +9,12 @@
 
 <body>
   <div class="main_content">
-    <div class="reg_form_grid">
-
+    <form class = "register-form" action = "includes/agentval.php" method="POST">
+    <div class="reg">
       <h2 class="heading_reg"> Change Password </h2>
+      <div class="reg_form_grid">
+
+
 
       <ul>
         <li><label for="cpwd"> <b>Current Password </b> </label></li>
@@ -26,10 +29,10 @@
         <li><input type="password" size="60" id="renpwd" ></li>
       </ul>
       <br>
-      <div class="edituserbtn" >
-        <a href="editprofile.php">Change Password</a>
-      </div>
+      <input type="submit" name = "request" value="Request For Register">
     </div>
+  </div>
+</form>
   </div>
 </body>
 </html>

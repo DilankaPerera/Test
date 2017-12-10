@@ -10,8 +10,10 @@
 
 <body>
   <div class="main_content">
+    <div class="reg">
+    <h2 class="heading_reg"> Edit my gzone </h2>
     <form class="reg_form_grid" action = "includes/alteruser.php" method="POST">
-      <h2 class="heading_reg"> Edit my gzone </h2>
+
       <br>
       <ul>
         <li><label for="fname"> <b>First Name </b> </label></li>
@@ -59,6 +61,7 @@
         <input type="submit" value="Save Changes" name="editprofile">
       </div>
     </form>
+  </div>
   </div>
 
 </body>
