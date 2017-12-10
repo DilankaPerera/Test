@@ -10,12 +10,12 @@ function get_segment(){
 	
 	$get_segment = "select * from segment";
 			
-	$run_segment= mysqli_query($con, $get_segment);
+	$run_segment= mysqli_query($conn, $get_segment);
 	
 	while ($row_segment=mysqli_fetch_array($run_segment)){
 	
 		$segment_id = $row_segment['segment_id']; 
-		$segment_name = $row_cats['segment_name'];
+		$segment_name = $row_segment['segment_name'];
 	
 	echo "<li><a href='index.php?segment='$segment_id'>$segment_name</a></li>";
 	
