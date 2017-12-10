@@ -9,7 +9,7 @@ function get_segment(){
 	global $conn;
 	
 	$get_segment = "select * from segment";
-	
+			
 	$run_segment= mysqli_query($con, $get_segment);
 	
 	while ($row_segment=mysqli_fetch_array($run_segment)){
@@ -38,50 +38,56 @@ function get_segment(){
 
 function getSegProduct(){
 
-	if (!isset($_GET['segment'])) {
-
+	if (isset($_GET['category'])) {
+	
+		$cat_id = $_GET['category'] ;		
+		
 	global $conn;
 
-	$get_seg_product = "select * from product where product_segment='$segment_id'";
+	$get_seg_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id AND product_category='$cat_id' " ; 
 
 	$run_seg_product = mysqli_query($conn, $get_seg_product);
 
-	$count_seg_product = mysqli_num_rows($run_seg_product);
+	// if (mysqli_num_rows($run_product) > 0) {
 
-	if ($count_seg_product==0) {
+		// var_dump($run_product);
+		while ($row_seg_product=mysqli_fetch_array($run_seg_product)) {
 
-	echo "<h2>There is no product in this segment</h2>";
-		
-	}
+				// var_dump($row_product);
 
-	while ($row_seg_product=mysqli_fetch_array($run_seg_product)) {
-		
-		$product_id = $row_seg_product['product_id'];
-		$product_name = $row_seg_product['product_name'];
-		$product_price = $row_seg_product['product_price'];
-		$product_image = $row_seg_product['product_image'];
-		$product_segment = $row_seg_product['product_segment'];
-		$product_category= $row_seg_product['product_category'];
-		$product_brand = $row_seg_product['product_brand'];
+			$product_id = $row_seg_product['product_id'];
+			$product_name = $row_seg_product['product_name'];
+			$product_price = $row_seg_product['product_price'];
+			$product_image = $row_seg_product['product_image'];
+			$product_segment = $row_seg_product['segment_name'];
+			$product_category= $row_seg_product['cat_name'];
 
 			echo "
 
 				<div id='single_product'>
 
-					<h3>$product_name<h3>
+					<h4>$product_name</h4>
 
-					<img src='admin_area/product_images/$product_image' width='180' height='180'>
-
-					<p> $product_price </p>
-
-					<a href='single.php?product_id=$product_id'>Details</a>   
-					<a href='index.php?product_id=$product_id'><button style='float:right'>Add to Cart></a>
+					<img src='admin_area/product_images/$product_image' width='200' height='200' />
+					<p><b> Price: $product_price </b></p>
+					
+					<a href='single.php?product_id=$product_id' style='float:left;'>Details</a>
+					
+					<a href='index.php?add_cart=$product_id'><button style='float:right'>Add to Cart</button></a>
 
 				</div>
 
-			";
+			";	
 	}
-}
+
+
+	}
+		
+	
+
+
+
+
 }
 
 
@@ -89,6 +95,10 @@ function getSegProduct(){
 
 function getProduct(){
 
+	if (!isset($_GET['category'])) {
+			if (!isset($_GET['segment'])) {
+				
+		
 	global $conn;
 
 	$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id order by RAND() LIMIT 0,6 " ; 
@@ -116,7 +126,7 @@ function getProduct(){
 
 					<h4>$product_name</h4>
 
-					<img src='admin_area/product_images/$product_image' width='100' height='100' />
+					<img src='admin_area/product_images/$product_image' width='200' height='200' />
 					<p><b> Price: $product_price </b></p>
 					
 					<a href='single.php?product_id=$product_id' style='float:left;'>Details</a>
@@ -129,7 +139,9 @@ function getProduct(){
 	}
 
 
-	// }
+	}
+		
+	}
 
 
 
