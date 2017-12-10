@@ -10,15 +10,13 @@ if(isset($_SESSION['SESS_LOGGEDIN']) == TRUE) {
 
 }
 
-if($_POST['login'])
-
-{
-    $username = mysqli_real_escape_string($con, $_POST["username"]);
+if($_POST['login']) {
+    $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $password = password_hash($_POST["password"],PASSWORD_DEFAULT);
 
     $loginsql = "SELECT * FROM user WHERE username = '$username' AND password = '$password'";
     $loginres = mysqli_query($conn,$loginsql);
-    $numrows = mysqli_query($loginres);
+    $numrows = mysqli_num_rows($loginres);
 
     if($numrows == 1) {
 
@@ -26,7 +24,7 @@ if($_POST['login'])
         $_SESSION['SESS_LOGGEDIN'] = 1;
         $_SESSION['SESS_USERNAME'] = $loginrow['username'];
 
-        $ordersql = "SELECT order_id FROM orders WHERE user_username = " . $_SESSION['SESS_USERNAME'] . " AND status < 2";
+        $ordersql = "SELECT order_id FROM order WHERE user_username = " . $_SESSION['SESS_USERNAME'] . " AND status < 2";
 
         $orderres = mysqli_query($ordersql);
 
@@ -38,11 +36,38 @@ if($_POST['login'])
 
     }
 
-    else
+    else {
+        $loginusername = "SELECT username FROM user WHERE username='$username' ";
+        $run = mysqli_query($conn,$loginusername);
+        $numrows  = mysqli_num_rows($run);
 
-    {
+        if($numrows==1){
+            echo "<script language=\"JavaScript\">\n";
+            echo "alert('Incorrect Password');\n";
+            echo "window.location='login.php'";
+            echo "</script>";
+        }
 
-        header("Location: http://" .$_SERVER['HTTP_HOST']. $_SERVER['SCRIPT_NAME'] . "?error=1");
+        else{
+            $loginpass = "SELECT password FROM user WHERE password='$password' ";
+            $run1 = mysqli_query($conn,$loginpass);
+            $numrows1  = mysqli_num_rows($run1);
+
+            if($numrows1==1){
+                echo "<script language=\"JavaScript\">\n";
+                echo "alert('Incorrect Username');\n";
+                echo "window.location='login.php'";
+                echo "</script>";
+            }
+
+            else{
+                echo "<script language=\"JavaScript\">\n";
+                echo "alert('Incorrect password and username. Pleaase sign up from below if you don't have an account');\n";
+                echo "window.location='login.php'";
+                echo "</script>";
+            }
+        }
+
 
     }
 
