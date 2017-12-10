@@ -21,16 +21,16 @@
 			<div class="reg_form_grid">
 				<ul>
 					<li><label for="uname"> <b> Username <span class="req">*</span></b> </label></li>
-			    <li><input type="text" size="50" name="uname" required autocomplete="off"></li>
+			    <li><input type="text" size="50" name="uname" id="uname" required autocomplete="off"></li>
 					<br>
 					<li><label for="email"> <b>E-mail</b><span class="req">*</span></label></li>
-			    <li><input type="varchar" size="50" name="email" required autocomplete="off"></li>
+			    <li><input type="varchar" size="50" name="email" id="email" required autocomplete="off"></li>
 					<br>
 					<li><label for="pwd"> <b>Password </b> <span class="req">*</span></label></li>
-			    <li><input type="password" size="50" name="pwd" required autocomplete="off"></li>
+			    <li><input type="password" size="50" name="pwd" id="pwd" required autocomplete="off"></li>
 					<br>
 					<li><label for="repwd"> <b> Re-enter Password </b> <span class="req">*</span></label></li>
-			    <li><input type="password" size="50" name="repwd" required autocomplete="off"></li>
+			    <li><input type="password" size="50" name="repwd" id="repwd" required autocomplete="off"></li>
 				</ul>
 				<br>
 				<form action="index.php" method="get">

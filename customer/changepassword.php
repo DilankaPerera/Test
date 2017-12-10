@@ -1,10 +1,10 @@
-<?php include_once('Templates/header.php'); ?>
+<?php include_once('../Templates/header.php'); ?>
 
 <html>
 <head>
   <title> change password </title>
-  <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
-  <link href="css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css" media="all"/>
+  <link href="../css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -34,4 +34,4 @@
 </body>
 </html>
 
-<?php include_once('Templates/footer.php'); ?>
+<?php include_once('../Templates/footer.php'); ?>

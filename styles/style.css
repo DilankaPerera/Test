@@ -245,11 +245,25 @@ i.fa.fa-arrow-right {
 	max-width: 600px;
 	margin: 40px auto;
 }*/
+
+#loginform{
+  width: 30%;
+  padding: 3em;
+  background:#F7F7F9;
+  margin:3em auto 0;
+  border-radius: 9px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+
+}
+
+
 .reg_form_grid{
 	width: 45%;
-    padding: 3em;
+  padding: 3em;
 	background:#F7F7F9;
 	margin:3em auto 0;
+  border-radius: 9px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 
 }
 .reg_form_grid ul{
@@ -289,7 +303,7 @@ i.fa.fa-arrow-right {
 
 }
 .reg{
-	padding:5em 0;
+	padding:3em 0;
 }
 /*lawran's block starts here*/
 .form {
@@ -324,7 +338,10 @@ i.fa.fa-arrow-right {
   color: white;
 
 }
-
+.tablestyles td{
+  padding: 10px;
+  font-size: 15px ;
+}
 
 /*navigation bar css*/
 

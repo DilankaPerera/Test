@@ -57,7 +57,7 @@ if(isset($_POST['register'])) {
                     //inset the user into database
                     $insert_c = "INSERT INTO user(username,password,user_role_id)VALUES('$uname','$hash_pwd','2')";
                     $result = mysqli_query($conn, $insert_c);
-                    $insert_c = "INSERT INTO customer(customer_email,user_username) VALUES ('$email','$uname')";
+                    $insert_c = "INSERT INTO customer(customer_email,customer_username) VALUES ('$email','$uname')";
                     $result = mysqli_query($conn, $insert_c);
                     if (!$result) {
                         die(mysqli_error($conn));
@@ -80,7 +80,7 @@ if(isset($_POST['register'])) {
 }
 
 else{
-    header("Location: ../../test_customer_registration.php");
+    header("Location: ../test_customer_registration.php");
     exit();
 }
 ?>
