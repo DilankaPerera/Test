@@ -1,3 +1,13 @@
+<?php
+
+include('functions/functions.php');
+include('includes/db.php');
+include ('functions/cartfunctions.php');
+$cart = new Cart;
+
+
+?>
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">

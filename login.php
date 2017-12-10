@@ -1,4 +1,8 @@
-<?php include_once('Templates/header.php'); ?>
+<?php include_once('Templates/header.php');
+include('functions/functions.php');
+include('includes/db.php');
+include ('functions/cartfunctions.php');
+?>
 <html>
 
 <head>
