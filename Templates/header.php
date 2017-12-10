@@ -14,7 +14,6 @@ $config_basedir = "index.php";
 // Create connection
 $conn = mysqli_connect($hostname,$username,$password,$database);
 
-include 'Cart.php';
 $cart = new Cart;
 ?>
 
@@ -40,7 +39,7 @@ $cart = new Cart;
 		</ul>	
 	</div>
 	<div class="view-cart-main">
-		<a href="viewcart.php"><button class="view-cart" title="View Cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
+		<a href="view_cart.php"><button class="view-cart" title="View Cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
         <?php
         if($cart->total_items()>0){
             ?>

@@ -2,6 +2,7 @@
 
 include('functions/functions.php');
 include('includes/db.php');
+include ('functions/cartfunctions.php');
 
 
 ?>
