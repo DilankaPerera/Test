@@ -37,11 +37,12 @@ include('includes/db.php');
 
 				$prod_id = $_GET['product_id'];
 			
-				$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id WHERE product_id='$prod_id' " ; 
+				$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id AND product_id='$prod_id' " ; 
+				// var_dump($get_product);
 
 				$run_product = mysqli_query($conn, $get_product);
-
-
+ 				
+ 				// var_dump($run_product);
 
 				while ($row_product=mysqli_fetch_array($run_product)) {	
 

@@ -1,11 +1,3 @@
-<?php
-
-include('functions/functions.php');
-include('includes/db.php');
-
-
-?>
-
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -64,7 +56,7 @@ include('includes/db.php');
 			    <div class="box-footer">
 			        <a href="#" style="float: left;" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
 			       <!--  <a href="#" style="float: right;" class="btn btn-info">Proceed to Checkout <i class="fa fa-chevron-right"></i></a> -->
-			       <button style="float: right;" type="submit" class="btn btn btn-info">Continue to Delivery Method<i class="fa fa-chevron-right"></i>
+			       <button style="float: right;" type="submit" class="btn btn btn-info"> Proceed with Checkout <i class="fa fa-chevron-right"></i>
                                     </button>
 			    </div>
 

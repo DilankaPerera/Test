@@ -2,6 +2,7 @@
 
 include('functions/functions.php');
 include('includes/db.php');
+include ('functions/cartfunctions.php');
 
 
 ?>
@@ -29,21 +30,13 @@ include('includes/db.php');
 		<?php include_once('Templates/navigation_bar.php'); ?>
 
 			<div class="right_content">
-				<div class="frontimg">
-					<div class="shopnow">
-						<h1>Explore with Exclusive Shopping Experiences</h1>
-						<button>SHOP NOW</button>
-						
-					</div>
-					
-
-
-
-				</div>
 
 				<div id="product_box">
 
 					<?php getProduct(); ?>
+					
+
+
 
 					
 					
