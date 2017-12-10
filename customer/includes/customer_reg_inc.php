@@ -53,11 +53,14 @@ if(isset($_POST['register'])) {
                 }
                 else{
                     //hashing the password
-                    $hash_pwd = password_hash($pwd,PASSWORD_DEFAULT);
+                    $hash_pwd = md5($pwd);
+                    var_dump($hash_pwd . "hash password");
                     //inset the user into database
                     $insert_c = "INSERT INTO user(username,password,user_role_id)VALUES('$uname','$hash_pwd','2')";
+                    //var_dump($insert_c . "insert query1");
                     $result = mysqli_query($conn, $insert_c);
                     $insert_c = "INSERT INTO customer(customer_email,user_username) VALUES ('$email','$uname')";
+                    //var_dump($insert_c . "insert query2");
                     $result = mysqli_query($conn, $insert_c);
                     if (!$result) {
                         die(mysqli_error($conn));

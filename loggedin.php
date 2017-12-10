@@ -13,15 +13,18 @@ if(isset($_SESSION['SESS_LOGGEDIN']) == TRUE) {
 if($_POST['login']) {
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
-    $hashpwd = password_hash($_POST["password"], PASSWORD_DEFAULT);
-
+    $hashpwd = md5($password);
+    var_dump($username);
+    var_dump($password);
+    var_dump($hashpwd);
     $loginsql = "SELECT * FROM user WHERE username = '$username' AND password = '$hashpwd'";
-    $loginres = mysqli_query($conn, $loginsql);
-    $numrows = mysqli_fetch_array($loginres);
-    $count=mysqli_num_rows($numrows);
+    $loginres = mysqli_query($conn, $loginsql) or die(mysqli_error($conn));
+    //$numrows = mysqli_fetch_array($loginres);
+    //$count=mysqli_num_rows($numrows);
     echo "error";
 
-    if ($count) {
+
+    while ($numrows = mysqli_fetch_array($loginres)){
         echo "error";
         $_SESSION['SESS_LOGGEDIN'] = 1;
         $_SESSION['SESS_USERNAME'] = $numrows['username'];
@@ -36,9 +39,9 @@ if($_POST['login']) {
 
         header("Location: " . $config_basedir);
 
-    } else {
-        echo mysqli_errno($conn);
     }
+
+    var_dump($numrows);
 
 //    else {
 //        $loginusername = "SELECT username FROM user WHERE username='$username' ";

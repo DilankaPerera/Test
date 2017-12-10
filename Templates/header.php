@@ -26,7 +26,7 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 			<li><a href="#"> Be an Agent </a></li>
 
             <?php
-            if(isset($_SESSION['SESS_LOGGEDIN']) == TRUE){
+            if(isset($_SESSION['SESS_LOGGEDIN']) == 1){
                 echo "Logged in as <strong>" . $_SESSION['SESS_USERNAME']. "</strong>[<a href='logout.php'>logout</a>]";
     }
 
