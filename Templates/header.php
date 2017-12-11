@@ -15,33 +15,43 @@ $config_basedir = "index.php";
 $conn = mysqli_connect($hostname,$username,$password,$database);
 
 ?>
+<html>
 
+<head>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
+	<link href="css/font-awesome.css" rel="stylesheet">
+</head>
 
+<body>
 <!--Top header-->
-<div class="header-top">
-	<div class="topword">
-		<ul>
+<div class="hnavbar">
+  <div class="hdropdown">
+    <button class="hdropbtn">
+      <i class="fa fa-user"></i>
+    </button>
+    <div class="hdropdown-content">
+      <a href="#">View Profile</a>
+      <a href="#">Delete Profile</a>
+      <a href="#">Change Password</a>
+      <a href="#">Log Out</a>
+    </div>
+  </div>
 
-			<li><a href="#"> Be a Customer  </a></li>
-			<li><a href="#"> Be an Agent </a></li>
+  <a href="view_cart.php"><button class="view-cart" ><i class="fa fa-cart-arrow-down"></i></button></a>
 
-            <?php
-            if(isset($_SESSION['SESS_LOGGEDIN']) == 1){
-                echo "Logged in as <strong>" . $_SESSION['SESS_USERNAME']. "</strong>[<a href='logout.php'>logout</a>]";
+  <?php
+    if(isset($_SESSION['SESS_LOGGEDIN']) == 1){
+        echo "Logged in as <strong>" . $_SESSION['SESS_USERNAME']. "</strong>[<a href='logout.php'>logout</a>]";
+      }
+
+    else {
+        echo "<a href='login.php'>Login</a>";
     }
+    ?>
+    <a href="#home">Sign up</a>
+    <a href="#home">Be an Agent</a>
+  </div>
 
-            else {
-                echo "<li><a href='../login.php'>Login</a></li>";
-            }
-?>
-
-		</ul>	
-	</div>
-	<div class="view-cart-main">
-		<a href="view_cart.php"><button class="view-cart" title="View Cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
-
-	</div>
-</div>
 <!--//Top header-->
 
 <!--Botttom header-->
@@ -55,8 +65,11 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 					<button type="submit" name="search" value="Search" class="btn btn-default search" aria-label="Left Align">
 					<i class="fa fa-search" aria-hidden="true"> </i>
 					</button>
-				</form>	
+				</form>
 			</div>
 	</div>
 </div>
 <!--//Botttom header-->
+
+</body>
+</html>

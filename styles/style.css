@@ -38,17 +38,17 @@ h1, h2, h3, h4, h5, h6, a{
 	margin: 1em;
 
 }
-.topword{
-	position: absolute;
+/* 	.position: absolute;
 	left: 50%;
 	width: 50%;
 	text-align: center;
 	padding: 8px 0;
-}
+}*/
 ul{
 	margin: 0;
 	padding: 0;
 }
+/*
 .topword ul li{
 	display: inline-block;
 	padding: 0em 1em;
@@ -60,11 +60,86 @@ ul{
 	color: white;
 	text-decoration: none;
 	font-weight: 400;
+
+}*/
+
+/*new header*/
+
+.hnavbar {
+  overflow: hidden;
+  background-color: #333;
+  font-family: Arial;
 }
+
+.hnavbar a {
+  float:right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  vertical-align: middle;
+
+}
+
+
+.hdropdown {
+    float: right;
+    overflow: hidden;
+}
+
+.hdropdown .hdropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.hnavbar a:hover, .hdropdown:hover .hdropbtn {
+    background-color: red;
+}
+
+.hdropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    padding-bottom: 3px;
+}
+
+.hdropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+
+
+}
+
+.hdropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.hdropdown:hover .hdropdown-content {
+    display: block;
+}
+
+.hdropbtn i.fa {
+    font-size: 30px;
+    color: #ffffff;
+  }
+
 
 .view-cart i.fa {
     font-size: 30px;
     color: #ffffff;
+
 }
 button.view-cart {
     background: transparent;
@@ -75,7 +150,9 @@ button.view-cart:focus{
 }
 .view-cart-main{
 	float: right;
-	padding-right: 120px;
+  padding-bottom: 3px;
+
+
 	/*padding-top: 10px;*/
 	/*bottom: 5px;*/
 	/*position: relative;
