@@ -1,10 +1,10 @@
 <?php
-//session_start();
+session_start();
 include "includes/db.php";
 
 
 //a check is made to see if the user is already logged in
-if(isset($_SESSION['SESS_LOGGEDIN']) == TRUE) {
+if(isset($_SESSION['SESS_LOGGEDIN']) == 1) {
 
     header("Location: " . $config_basedir);
 
@@ -14,34 +14,32 @@ if($_POST['login']) {
     $username = mysqli_real_escape_string($conn, $_POST["username"]);
     $password = mysqli_real_escape_string($conn, $_POST["password"]);
     $hashpwd = md5($password);
-    var_dump($username);
-    var_dump($password);
-    var_dump($hashpwd);
     $loginsql = "SELECT * FROM user WHERE username = '$username' AND password = '$hashpwd'";
-    $loginres = mysqli_query($conn, $loginsql) or die(mysqli_error($conn));
+    //$loginres = mysqli_query($conn, $loginsql) or die(mysqli_error($conn));
+    $loginres = $conn ->query($loginsql);
     //$numrows = mysqli_fetch_array($loginres);
     //$count=mysqli_num_rows($numrows);
-    echo "error";
 
 
-    while ($numrows = mysqli_fetch_array($loginres)){
-        echo "error";
+    //while ($numrows = mysqli_fetch_array($loginres)){
+    while($numrows=$loginres->fetch_array()){
         $_SESSION['SESS_LOGGEDIN'] = 1;
         $_SESSION['SESS_USERNAME'] = $numrows['username'];
+        //echo $_SESSION['SESS_USERNAME'];
 
-        $ordersql = "SELECT order_id FROM order WHERE user_username = " . $_SESSION['SESS_USERNAME'] . " AND status < 2";
 
-        $orderres = mysqli_query($ordersql);
+        //$ordersql = "SELECT order_id FROM order WHERE user_username = " . $_SESSION['SESS_USERNAME'] . " AND status < 2";
 
-        $orderrow = mysqli_fetch_assoc($orderres);
+        //$orderres = mysqli_query($ordersql);
 
-        $_SESSION['SESS_ORDERNUM'] = $orderrow['id'];
+        //$orderrow = mysqli_fetch_assoc($orderres);
+
+        //$_SESSION['SESS_ORDERNUM'] = $orderrow['id'];
 
         header("Location: " . $config_basedir);
 
     }
 
-    var_dump($numrows);
 
 //    else {
 //        $loginusername = "SELECT username FROM user WHERE username='$username' ";

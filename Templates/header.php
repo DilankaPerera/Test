@@ -22,23 +22,31 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 	<div class="topword">
 		<ul>
 
-			<li><a href="#"> Be a Customer  </a></li>
+			<li><a href="test_customer_registration.php"> Be a Customer  </a></li>
 			<li><a href="#"> Be an Agent </a></li>
 
-            <?php
-            if(isset($_SESSION['SESS_LOGGEDIN']) == 1){
-                echo "Logged in as <strong>" . $_SESSION['SESS_USERNAME']. "</strong>[<a href='logout.php'>logout</a>]";
-    }
+            <?php if(isset($_SESSION['SESS_LOGGEDIN']) == 1){ ?>
+                <?php echo "<text style='color:white;'>".$_SESSION['SESS_USERNAME']."</text>"; ?>
+                <a href="logout.php" style='color:white';>(Log out)</a>
 
-            else {
-                echo "<li><a href='../login.php'>Login</a></li>";
-            }
-?>
+            <?php }else{ ?>
+                <a class="link" href="login.php" style='color:white';>login</a>
+            <?php } ?>
+
+<!--            --><?php
+//            if(isset($_SESSION['SESS_LOGGEDIN']) == 0){
+//                echo "<text style='color:white;'>". "Logged in as ".$_SESSION['SESS_USERNAME']."</text>";
+//    }
+//
+//            else {
+//                echo "<li><a href="login.php">Login</a></li>";
+//            }
+//?>
 
 		</ul>	
 	</div>
 	<div class="view-cart-main">
-		<a href="view_cart.php"><button class="view-cart" title="View Cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
+		<a href="../view_cart.php"><button class="view-cart" title="View Cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
 
 	</div>
 </div>

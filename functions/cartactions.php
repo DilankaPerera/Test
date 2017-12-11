@@ -4,10 +4,10 @@ include 'cartfunctions.php';
 $cart = new Cart;
 
 // include database configuration file
-include 'db.php';
+include '../includes/db.php';
 if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
     if($_REQUEST['action'] == 'addToCart' && !empty($_REQUEST['product_id'])){
-        $productID = $_REQUEST['product_id'];
+        $productID = $_REQUEST['id'];
         // get product details
         $query = $conn->query("SELECT * FROM product WHERE product_id = ".$productID);
         $row = $query->fetch_assoc();
@@ -33,7 +33,7 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
         header("Location: viewCart.php");
     }elseif($_REQUEST['action'] == 'placeOrder' && $cart->total_items() > 0 && !empty($_SESSION['sessCustomerID'])){
         // insert order details into database
-        $insertOrder = $conn->query("INSERT INTO order (customer_id, total_price, created, modified) VALUES ('".$_SESSION['sessCustomerID']."', '".$cart->total()."', '".date("Y-m-d H:i:s")."', '".date("Y-m-d H:i:s")."')");
+        $insertOrder = $conn->query("INSERT INTO order (order_price, user_username) VALUES ('".$cart->total()."','".$_SESSION['sessCustomerID']."')");
 
         if($insertOrder){
             $orderID = $conn->insert_id;
@@ -41,19 +41,19 @@ if(isset($_REQUEST['action']) && !empty($_REQUEST['action'])){
             // get cart items
             $cartItems = $cart->contents();
             foreach($cartItems as $item){
-                $sql .= "INSERT INTO order_items (order_id, product_id, quantity) VALUES ('".$orderID."', '".$item['id']."', '".$item['qty']."');";
+                $sql .= "INSERT INTO order_has_product (order_id, product_id, quantity) VALUES ('".$orderID."', '".$item['product_id']."', '".$item['product_quantity']."');";
             }
             // insert order items into database
             $insertOrderItems = $conn->multi_query($sql);
 
             if($insertOrderItems){
                 $cart->destroy();
-                header("Location: orderSuccess.php?id=$orderID");
+                //header("Location: orderSuccess.php?id=$orderID");
             }else{
-                header("Location: checkout.php");
+                //header("Location: checkout.php");
             }
         }else{
-            header("Location: checkout.php");
+            //header("Location: checkout.php");
         }
     }else{
         header("Location: index.php");
