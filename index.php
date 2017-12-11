@@ -77,12 +77,14 @@ include ('functions/cartfunctions.php');
 					</script>	
 			
 			</div>
-		</div>
 
+			
 		<div class="product_box1">
 			
 
 		</div>
+		</div>
+
 
 
 		
