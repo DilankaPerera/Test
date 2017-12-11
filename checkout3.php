@@ -25,17 +25,11 @@ include('includes/db.php');
 
 	<div class="main_content">
 
-		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
-
-			<div class="right_content">
 			
 				<div class="checkbox1">
                         <form method="post" action="checkout4.php">
                             <h1>Checkout - Payment method</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.php"><i class="fa fa-map-marker"></i><br>Address</a>
-                                </li>
                                 <li><a href="checkout2.php"><i class="fa fa-truck"></i><br>Delivery Method</a>
                                 </li>
                                 <li class="active"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
@@ -113,7 +107,6 @@ include('includes/db.php');
 
 
 
-			</div>
 	</div>
 
 

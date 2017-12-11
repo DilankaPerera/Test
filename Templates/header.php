@@ -41,18 +41,20 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 
 
   <a href="view_cart.php"><button class="view-cart" ><i class="fa fa-cart-arrow-down"></i></button></a>
-  <a href="#home">Sign up</a>
+  <a href="customer_registration">Sign up</a>
     <a href="#home">Be an Agent</a>
 
-  <?php
-    if(isset($_SESSION['SESS_LOGGEDIN']) == 1){
-        echo "Logged in as <strong>" . $_SESSION['SESS_USERNAME']. "</strong>[<a href='logout.php'>logout</a>]";
-      }
+    <?php if(isset($_SESSION['SESS_LOGGEDIN']) == 1){ ?>
+        <a href="logout.php" style='color:white';><?php echo "<text style='color:white;'>".$_SESSION['SESS_USERNAME']."</text>"; ?> (Log out)</a>
 
-    else {
-        echo "<a href='login.php'>Login</a>";
-    }
-    ?>
+    <?php }else{ echo "error"?>
+        <a class="link" href="login.php" style='color:white';>Login</a>
+    <?php } ?>
+
+
+
+
+
     <!-- <a href="#home">Sign up</a>
     <a href="#home">Be an Agent</a> -->
   </div>
@@ -80,17 +82,34 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 <!-- <div class="menu"> -->
 
   <div class="hbnavbar">
-	  <a href="#home">Home</a>
+	  <a href="index.php">Home</a>
 	  <a href="#news">All Products</a>
 
 		<div class="hbdropdown">
 	    <button class="hbdropbtn">Mobile & Tablets
 	      <i class="fa fa-caret-down"></i>
 	    </button>
+
 	    <div class="hbdropdown-content">
-	      <a href="#">Mobile & Tablets</a>
+	    	<?php
+                $query="SELECT * FROM segment WHERE category_cat_id=1";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
+                <?php
+                }
+                }else{
+                    echo mysqli_error($conn);
+                }
+
+
+            ?>
+	     <!--  <a href="#">Mobile & Tablets</a>
 	      <a href="#">Mobile & Tablets Accessories</a>
-	      <a href="#">Other Smart Devices</a>
+	      <a href="#">Other Smart Devices</a> -->
 	    </div>
 	  </div>
 
@@ -99,10 +118,26 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 				<i class="fa fa-caret-down"></i>
 			</button>
 			<div class="hbdropdown-content">
-				<a href="#">Computer Accessories</a>
+				<!-- <a href="#">Computer Accessories</a>
 				<a href="#">Datacards & Routers</a>
 				<a href="#">Storage</a>
-				<a href="#">Gaming</a>
+				<a href="#">Gaming</a> -->
+				<?php
+                $query="SELECT * FROM segment WHERE category_cat_id=2";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
+                <?php
+                }
+                }else{
+                    echo mysqli_error($conn);
+                }
+
+
+            ?>
 			</div>
 		</div>
 
@@ -111,11 +146,27 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 				<i class="fa fa-caret-down"></i>
 			</button>
 			<div class="hbdropdown-content">
-				<a href="#">Camera</a>
+			<!-- 	<a href="#">Camera</a>
 				<a href="#">Audio & Video Accessories</a>
 				<a href="#">Speakers</a>
 				<a href="#">Headphones</a>
-				<a href="#">Personal Care Applications</a>
+				<a href="#">Personal Care Applications</a> -->
+				<?php
+                $query="SELECT * FROM segment WHERE category_cat_id=3";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
+                <?php
+                }
+                }else{
+                    echo mysqli_error($conn);
+                }
+
+
+            ?>
 			</div>
 		</div>
 

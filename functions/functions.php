@@ -36,15 +36,15 @@ function get_segment(){
 
 // getting products from tables by segment
 
-function getSegProduct($id1){
+function getSegProduct(){
 
-	if (isset($_GET['category'])) {
+	if (isset($_GET['segment'])) {
 	
-		$cat_id = $_GET['category'] ;		
+		$seg_id = $_GET['segment'] ;		
 		
 	global $conn;
 
-	$get_seg_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id AND product_category='$cat_id' " ; 
+	$get_seg_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id AND segment.segment_id='$seg_id' " ; 
 
 	$run_seg_product = mysqli_query($conn, $get_seg_product);
 
@@ -54,7 +54,6 @@ function getSegProduct($id1){
 		while ($row_seg_product=mysqli_fetch_array($run_seg_product)) {
 
 				// var_dump($row_product);
-			$id = $id1;
 			$product_id = $row_seg_product['product_id'];
 			$product_name = $row_seg_product['product_name'];
 			$product_price = $row_seg_product['product_price'];
@@ -69,7 +68,7 @@ function getSegProduct($id1){
 					<h4>$product_name</h4>
 
 					<img src='admin_area/product_images/$product_image' width='200' height='200' />
-					<p><b> Price: $product_price </b></p>
+					<p><b> LKR $product_price </b></p>
 					
 					<a href='single.php?product_id=$product_id' style='float:left;'>Details</a>
 					
@@ -101,7 +100,7 @@ function getProduct(){
 		
 	global $conn;
 
-	$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id order by RAND() LIMIT 0,3" ; 
+	$get_product = "SELECT * FROM product,category,segment WHERE product.segment_id = segment.segment_id AND product.category_id = category.cat_id order by RAND() LIMIT 0,4" ; 
 
 	$run_product = mysqli_query($conn, $get_product);
 
@@ -127,11 +126,10 @@ function getProduct(){
 					<h4>$product_name</h4>
 
 					<img src='admin_area/product_images/$product_image' width='200' height='200' />
-					<p><b> Price: $product_price </b></p>
+					<center><p><b>LKR $product_price </b></p></center>
 					
-					<a href='single.php?product_id=$product_id' style='float:left;'>Details</a>
+					<center><a href='single.php?product_id=$product_id' style='text-align:center;'>DETAILS</a></center>
 					
-					<a href='index.php?add_cart=$product_id'><button style='float:right'>Add to Cart</button></a>
 
 				</div>
 

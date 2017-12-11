@@ -53,6 +53,21 @@ include('includes/db.php');
                                                 <input type="radio" name="courier" value="1">
                                             </div>
                                             <div id="delbox">
+                                                <form id="cadd">
+                                                    <label for="fname">First Name</label>
+                                                    <input type="text" name="fname">
+                                                    <label for="lname">Last name</label>
+                                                    <input type="text" name="lname">
+                                                    <label for="fname">Address</label>
+                                                    <input type="text" name="fname">
+                                                    <label for="lname">Postal Code</label>
+                                                    <input type="text" name="lname">
+                                                    <label for="fname">Contact Number</label>
+                                                    <input type="text" name="fname">
+                                                    <label for="lname">Email</label>
+                                                    <input type="text" name="lname">
+                                                    
+                                                </form>
                                               
                                             </div>
                                         </div>
@@ -62,16 +77,14 @@ include('includes/db.php');
                                     <div class="col-sm-6">
                                         <div class="box shipping-method">
 
-                                            <h4>USPS Next Day</h4>
-
-                                            <p>Get it right on next day - fastest option possible.</p>
+                                            <h3>Select Collection Point</h3>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="delivery" value="delivery3">
+                                                <input type="radio" name="collection_point" value="0">
                                             </div>
                                             <div id="delbox">
-                                                bfdbfhh
+                                      
                                                 
                                             </div>
                                         </div>

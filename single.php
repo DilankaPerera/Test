@@ -24,10 +24,6 @@ include('includes/db.php');
 
 	<div class="main_content">
 
-		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
-
-		<div class="right_content">
 			<div id="product_box">
 
 			<?php
@@ -57,15 +53,21 @@ include('includes/db.php');
 
 					echo "
 
-						<div id='single_product'>
+						<div id='single_product1'>
 
-							<h4>$product_name</h4>
+							<h1>$product_name</h1>
 
-							<img src='admin_area/product_images/$product_image' width='100' height='100' />
+							<img src='admin_area/product_images/$product_image' width='200' height='200' />
 
 							<p><b> Price: $product_price </b></p>
 
 							<p> $product_description</p>
+
+							<form>
+							Quantity: <input type='text' name='product_quantity' value='1' readonly> 
+							</form>
+
+							<br>
 
 							<a href='index.php' style='float:left;' >Go Back</a>
 							

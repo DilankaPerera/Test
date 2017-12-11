@@ -359,7 +359,7 @@ i.fa.fa-arrow-right {
 /*content*/
 .main_content{
 	width: 100%;
-	height: 1500px;  /*height should be auto*/
+	height: auto;  /*height should be auto*/
 	background-color: white;
 	margin: auto;
 }
@@ -581,17 +581,17 @@ li .dropdown {
 
 /*display products starts*/
 #product_box{
-  height: 1000px;   /*should be auto*/
+  height: auto;   /*should be auto*/
   text-align: center;
   margin: 50px;
 
 }
 #single_product{
   float: left;
-  margin-left: 30px;
+  margin-left: 85px;
   padding: 25px;
-  border-style: solid;
-  border-width: 1px;
+  margin-top: 25;
+  background-color: white;
 }
 #single_product a {
   color: black;
@@ -600,12 +600,25 @@ li .dropdown {
 .product_box1{
   height: 400px;
 
-  background-color: red;
+  background-color:  #F7F7F9;
   margin: 40px 40px;
 
 }
-
-
+#single_product1{
+  height: 500px;
+  width: 600px;
+  margin: 40px;
+  padding: 50px 50px;
+  position: relative;
+  left: 30%;
+  background-color: #F7F7F9;
+}
+#product_box2{
+  height: 1000px;
+  background-color: #F7F7F9;
+  margin: 50 100;
+ 
+}
 
 
 
@@ -679,15 +692,26 @@ li .dropdown {
   width: auto;
   background-color: #e6e6e6;
  margin: 30px 60px;
- height: 880;
+ height: 960;
 
 }
 #delbox{
   background-color: #F7F7F9;
   margin-top: 15px;
-  height: 400px;
+  height: 500px;
 }
-
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+#cadd input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
 
 
 

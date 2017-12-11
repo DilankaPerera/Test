@@ -78,8 +78,16 @@ include ('functions/cartfunctions.php');
 			
 			</div>
 
-			
+
 		<div class="product_box1">
+
+			<?php getProduct(); ?>
+			
+
+		</div>
+		<div class="product_box1">
+
+			<?php getProduct(); ?>
 			
 
 		</div>

@@ -72,7 +72,7 @@ if(isset($_POST['register'])) {
 
                     echo "<script language=\"JavaScript\">\n";
                     echo "alert('You have been registered successfully');\n";
-                    echo "window.location='/Test/index.php'";
+                    echo "window.location='/ecom/index.php'";
                     echo "</script>";
                 }
 

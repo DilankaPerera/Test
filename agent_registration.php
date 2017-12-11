@@ -1,13 +1,13 @@
 <!-- header -->
-<?php include_once('../Templates/header.php'); ?>
+<?php include_once('Templates/header.php'); ?>
 
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Gzone Technologies</title>
 
-	<link rel="stylesheet" type="text/css" href="../styles/style.css" media="all"/>
-	<link href="../css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
+	<link href="css/font-awesome.css" rel="stylesheet">
 
 </head>
 
@@ -16,7 +16,7 @@
 <!-- content -->
 <div class="main_content">
 	<div class="reg">
-	<h3 style="text-align :center;">Become an <b>Agent</b> of <b>Gzone Technologies</b> & earn profit,</h3>
+	<h1 style="text-align :center;"><b>Become an Agent of Gzone Technologies & earn profit</b></h1>
 
 	 <p style="text-align :center;">At GZone Technologies, <br>
 		 we aim to cultivate a culture of collection points among our customers. <br>
@@ -70,7 +70,7 @@
 
 
 				<br>
-				Already have an account?  <a href="../login.php"> Sign in </a>
+				Already have an account?  <a href="../Test/login.php"> Sign in </a>
 			</div>
 		</div>
 	</div>
@@ -87,5 +87,5 @@
 <?php
 
 
-include_once('../Templates/footer.php');
+include_once('Templates/footer.php');
  ?>

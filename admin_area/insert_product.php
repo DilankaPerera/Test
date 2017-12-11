@@ -98,7 +98,7 @@ include("../includes/db.php")
 				<td><input type="text" name="product_model"></td>
 			</tr>
 			
-			<tr>
+			<tr>/
 				<td>Product Image</td>
 				<td><input type="file" name="product_image"></td>
 			</tr>
