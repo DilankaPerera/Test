@@ -24,92 +24,68 @@ include('includes/db.php');
 	<!-- content -->
 
 	<div class="main_content">
-
-		<!-- sidebar -->
-		<?php //include_once('Templates/navigation_bar.php'); ?>
-
-			<!-- <div class="right_content"> -->
-				<div class="checkbox1">
+        <div class="checkbox2">
                         <form method="post" action="checkout3.php">
-                            <h1>Checkout - Delivery method</h1>
+                            <h1>Checkout - Order review</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li class="active"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
+                                <li><a href="checkout1.php"><i class="fa fa-truck"></i><br>Delivery Method</a>
                                 </li>
-                                <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
+                                <li class="active"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
                                 </li>
-                                <li class="disabled"><a href="#"><i class="fa fa-eye"></i><br>Order Review</a>
+
+                                <li class="disabled"><a href=""><i class="fa fa-money"></i><br>Payment Method</a>
                                 </li>
+
                             </ul>
 
                             <div class="content">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="box shipping-method">
+                                <div class="table-responsive">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="2">Product</th>
+                                                <th>Quantity</th>
+                                                <th>Unit price</th>
+                                                <th>Total</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>   <!-- Should update the product information -->
+                                                <td>
 
-                                            <h3>Courier Service</h3>
+                                                <td><a href="single.php?product_id=$product_id"></a> 
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                        <tfoot>
+                                            <tr>
+                                                <th colspan="5">Total</th>
+                                                <th></th>   <!-- total should come -->
+                                            </tr>
+                                        </tfoot>
+                                    </table>
 
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="courier" value="1">
-                                            </div>
-                                            <div id="delbox">
-                                                <form id="cadd">
-                                                    <label for="fname">First Name</label>
-                                                    <input type="text" name="fname">
-                                                    <label for="lname">Last name</label>
-                                                    <input type="text" name="lname">
-                                                    <label for="fname">Address</label>
-                                                    <input type="text" name="fname">
-                                                    <label for="lname">Postal Code</label>
-                                                    <input type="text" name="lname">
-                                                    <label for="fname">Contact Number</label>
-                                                    <input type="text" name="fname">
-                                                    <label for="lname">Email</label>
-                                                    <input type="text" name="lname">
-                                                    
-                                                </form>
-                                              
-                                            </div>
-                                        </div>
-                                    </div>
-                             
-
-                                    <div class="col-sm-6">
-                                        <div class="box shipping-method">
-
-                                            <h3>Select Collection Point</h3>
-
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="collection_point" value="0">
-                                            </div>
-                                            <div id="delbox">
-                                      
-                                                
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                                <!-- /.row -->
-
-                                <br>
-                                <br>
-
+                                <!-- /.table-responsive -->
                             </div>
                             <!-- /.content -->
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to My Chart</a>
+                                    <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to Delivery method</a>
                                 </div>
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary">Continue to Payment Method<i class="fa fa-chevron-right"></i>
+                                    <button type="submit" class="btn btn-primary"> Continue to Payment Method <i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
                         </form>
                     </div>
-			
 
 			
 
@@ -117,11 +93,6 @@ include('includes/db.php');
 
 
 
-
-
-
-
-			</div>
 	</div>
 
 

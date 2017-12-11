@@ -42,6 +42,7 @@ $cart = new Cart;
 		<?php //include_once(/'Templates/navigation_bar.php'); ?>
 
 			<!-- <div class="right_content"> -->
+		<form method="post" action="checkout1.php">
 			<div class="container">
 				<div id="checkbox">
 			    <h1>My Chart</h1>
@@ -86,11 +87,16 @@ $cart = new Cart;
 			    </tfoot>
 			    </table>
 			    <div class="box-footer">
-			        <a href="#" style="float: left;" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
-			       <!--  <a href="#" style="float: right;" class="btn btn-info">Proceed to Checkout <i class="fa fa-chevron-right"></i></a> -->
-			       <button style="float: right;" type="submit" class="btn btn btn-info"> Proceed with Checkout <i class="fa fa-chevron-right"></i>
-                                    </button>
-			    </div>
+                    <div class="pull-left">
+                        <a href="index.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue Shopping </a>
+                    </div>
+                    <div class="pull-right">
+                        <button type="submit" class="btn btn-primary"> Continue to Delivery Method <i class="fa fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+        </form>
 
 			                               
 			</div>
