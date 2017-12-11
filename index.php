@@ -23,52 +23,64 @@ include ('functions/cartfunctions.php');
 	<?php include_once('Templates/header.php'); ?>
 
 	<!-- content -->
-
 	<div class="main_content">
+		<?php //include_once('Templates/navigation_bar.php'); ?>
 
-		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
+			<!-- <div class="right_content">
+			
+			</div> -->
 
-			<div class="right_content">
+		<div class="slideshow">
+			<div class="slideshow-container">
 
-				<div id="product_box">
+					<div class="mySlides fade">
+					  <img src="images/s1.jpg" style="width:100%">
+					</div>
 
-					<?php getProduct(); ?>
-					
+					<div class="mySlides fade">
+					  <img src="images/s2.jpg" style="width:100%">
+					</div>
 
+					<div class="mySlides fade">					 
+					  <img src="images/s3.jpg" style="width:100%">					 
+					</div>
 
+					</div>
+					<br>
 
-					
-					
+					<div style="text-align:center">
+					  <span class="dot"></span> 
+					  <span class="dot"></span> 
+					  <span class="dot"></span> 
+					</div>
 
+					<script>
+					var slideIndex = 0;
+					showSlides();
 
-				</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+					function showSlides() {
+					    var i;
+					    var slides = document.getElementsByClassName("mySlides");
+					    var dots = document.getElementsByClassName("dot");
+					    for (i = 0; i < slides.length; i++) {
+					       slides[i].style.display = "none";  
+					    }
+					    slideIndex++;
+					    if (slideIndex > slides.length) {slideIndex = 1}    
+					    for (i = 0; i < dots.length; i++) {
+					        dots[i].className = dots[i].className.replace(" active", "");
+					    }
+					    slides[slideIndex-1].style.display = "block";  
+					    dots[slideIndex-1].className += " active";
+					    setTimeout(showSlides, 3000); // Change image every 2 seconds
+					}
+					</script>	
+			
 			</div>
+		</div>
 
 
-
-
-
-
-
+		
 
 
 	</div>

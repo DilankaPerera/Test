@@ -24,8 +24,10 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 
 <body>
 <!--Top header-->
+
 <div class="topword">
 <div class="hnavbar">
+
   <div class="hdropdown">
     <button class="hdropbtn">
       <i class="fa fa-user"></i>
@@ -34,11 +36,13 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
       <a href="#">View Profile</a>
       <a href="#">Delete Profile</a>
       <a href="#">Change Password</a>
-      <a href="#">Log Out</a>
     </div>
   </div>
 
+
   <a href="view_cart.php"><button class="view-cart" ><i class="fa fa-cart-arrow-down"></i></button></a>
+  <a href="#home">Sign up</a>
+    <a href="#home">Be an Agent</a>
 
   <?php
     if(isset($_SESSION['SESS_LOGGEDIN']) == 1){
@@ -49,8 +53,8 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
         echo "<a href='login.php'>Login</a>";
     }
     ?>
-    <a href="#home">Sign up</a>
-    <a href="#home">Be an Agent</a>
+    <!-- <a href="#home">Sign up</a>
+    <a href="#home">Be an Agent</a> -->
   </div>
 </div>
 
@@ -73,5 +77,6 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 </div>
 <!--//Botttom header-->
 
-</body>
-</html>
+<div class="menu">
+	
+</div>

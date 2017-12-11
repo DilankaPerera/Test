@@ -28,12 +28,12 @@ $cart = new Cart;
 	<div class="main_content">
 
 		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
+		<?php //include_once(/'Templates/navigation_bar.php'); ?>
 
-			<div class="right_content">
+			<!-- <div class="right_content"> -->
 			<div class="container">
 				<div id="checkbox">
-			    <h1>Shopping Cart</h1>
+			    <h1>My Chart</h1>
 			    <table class="table">
 			    <thead>
 			        <tr>

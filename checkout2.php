@@ -26,15 +26,13 @@ include('includes/db.php');
 	<div class="main_content">
 
 		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
+		<?php //include_once('Templates/navigation_bar.php'); ?>
 
-			<div class="right_content">
+			<!-- <div class="right_content"> -->
 				<div class="checkbox1">
                         <form method="post" action="checkout3.php">
                             <h1>Checkout - Delivery method</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.php"><i class="fa fa-map-marker"></i><br>Address</a>
-                                </li>
                                 <li class="active"><a href="#"><i class="fa fa-truck"></i><br>Delivery Method</a>
                                 </li>
                                 <li class="disabled"><a href="#"><i class="fa fa-money"></i><br>Payment Method</a>
@@ -56,21 +54,13 @@ include('includes/db.php');
 
                                                 <input type="radio" name="delivery" value="delivery1">
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="box shipping-method">
-
-                                            <h4>USPS Next Day</h4>
-
-                                            <p>Get it right on next day - fastest option possible.</p>
-
-                                            <div class="box-footer text-center">
-
-                                                <input type="radio" name="delivery" value="delivery2">
+                                            <div id="delbox">
+                                                bfdbfhh
+                                                
                                             </div>
                                         </div>
                                     </div>
+                             
 
                                     <div class="col-sm-6">
                                         <div class="box shipping-method">
@@ -96,7 +86,7 @@ include('includes/db.php');
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i>Back to Addresses</a>
+                                    <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to My Chart</a>
                                 </div>
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-primary">Continue to Payment Method<i class="fa fa-chevron-right"></i>
