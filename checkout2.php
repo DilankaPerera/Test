@@ -46,17 +46,14 @@ include('includes/db.php');
                                     <div class="col-sm-6">
                                         <div class="box shipping-method">
 
-                                            <h4>USPS Next Day</h4>
-
-                                            <p>Get it right on next day - fastest option possible.</p>
+                                            <h3>Courier Service</h3>
 
                                             <div class="box-footer text-center">
 
-                                                <input type="radio" name="delivery" value="delivery1">
+                                                <input type="radio" name="courier" value="1">
                                             </div>
                                             <div id="delbox">
-                                                bfdbfhh
-                                                
+                                              
                                             </div>
                                         </div>
                                     </div>
@@ -72,6 +69,10 @@ include('includes/db.php');
                                             <div class="box-footer text-center">
 
                                                 <input type="radio" name="delivery" value="delivery3">
+                                            </div>
+                                            <div id="delbox">
+                                                bfdbfhh
+                                                
                                             </div>
                                         </div>
                                     </div>

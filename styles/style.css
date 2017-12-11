@@ -23,9 +23,7 @@ h1, h2, h3, h4, h5, h6, a{
 .header_bottom{
 	background-color: white;
 	height:120px;
-  border-bottom-style: solid;
-  border-width: 1px;
-  border-color: #333;
+
 }
 .header-top{
 	background-color: #2b2a2a;
@@ -43,12 +41,7 @@ h1, h2, h3, h4, h5, h6, a{
 	width: 50%;
 	text-align: center;
 	padding: 8px 0;
-<<<<<<< HEAD
-    color: white;
-}
-=======
 }*/
->>>>>>> origin/master
 ul{
 	margin: 0;
 	padding: 0;
@@ -80,7 +73,7 @@ ul{
 .hnavbar {
   overflow: hidden;
   background-color: #333;
-  font-family: Arial;
+
 }
 
 .hnavbar a {
@@ -157,8 +150,8 @@ ul{
 
 .hbnavbar {
     overflow: hidden;
-    background-color: #333;
-    font-family: Arial;
+    background-color: #1ABC9C;
+
 }
 
 .hbnavbar a {
@@ -184,9 +177,14 @@ ul{
     padding: 14px 16px;
     background-color: inherit;
 }
+.hbnavbar a:hover{
+  color: white;
+  text-decoration: none;
+  background-color: #333;
+}
 
-.hbnavbar a:hover, .hbdropdown:hover .hbdropbtn {
-    background-color: #1ABC9C;
+ .hbdropdown:hover .hbdropbtn {
+    background-color: #333;
     text-decoration: none;
 }
 
@@ -599,6 +597,22 @@ li .dropdown {
   color: black;
   text-decoration: none;
 }
+.product_box1{
+  height: 100px;
+  width: 100%;
+  background-color: red;
+
+}
+
+
+
+
+
+
+
+
+
+
 
 
  /*display products end here*/
@@ -668,7 +682,7 @@ li .dropdown {
 
 }
 #delbox{
-  background-color: white;
+  background-color: #F7F7F9;
   margin-top: 15px;
   height: 400px;
 }
