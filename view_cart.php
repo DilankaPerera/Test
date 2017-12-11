@@ -47,64 +47,68 @@ $cart = new Cart;
 				<div id="checkbox">
 			    <h1>My Chart</h1>
 			    <table class="table">
-			    <thead>
-			        <tr>
-			            <th>Product</th>
-			            <th>Price</th>
-			            <th>Quantity</th>
-			            <th>Subtotal</th>
-			        </tr>
-			    </thead>
-			    <tbody>
-                <?php
-                if($cart->total_items() > 0){
-                //get cart items from session
-                $cartItems = $cart->contents();
-                foreach($cartItems as $item){
-                ?>
-			        <tr>
-                        <td><?php echo $item["product_name"]; ?></td>
-                        <td><?php echo '$'.$item["product_price"].' USD'; ?></td>
-                        <td><input type="number" class="form-control text-center" value="<?php echo $item["product_quantity"]; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')"></td>
-                        <td><?php echo '$'.$item["subtotal"].' USD'; ?></td>
-                        <td>
-                            <!--<a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a>-->
-                            <a href="cartactions.php?action=removeCartItem&id=<?php echo $item["rowid"]; ?>" class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
+                    <?php
+                    $d=0;
+                    if(is_array($_COOKIE['item']))
+                    {
+                        $d=$d+1;
+                    }
+                    if($d==0){
+                        echo 'no records have found';
+                    }else
+                    {
+
+                    ?>
+                    <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
                     </tr>
-                <?php } }else{ ?>
-			            <tr><td colspan="4"><p>No items in your cart......</p></td>
-			        </tr>
-                <?php } ?>
-			    </tbody>
-				<tfoot>
-			        <tr>
-			            <td colspan="3"></td>
-                        <?php if($cart->total_items() > 0){ ?>
-			            <td class="text-center"><strong>Total LKR <?php echo '$'.$cart->total().' LKR'; ?></strong></td> <!-- should come the amount in between -->
-                        <?php } ?>
-			        </tr>
-			    </tfoot>
-			    </table>
-			    <div class="box-footer">
-                    <div class="pull-left">
-                        <a href="index.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue Shopping </a>
-                    </div>
-                    <div class="pull-right">
-                        <button type="submit" class="btn btn-primary"> Continue to Delivery Method <i class="fa fa-chevron-right"></i>
+                    </thead>
+                    <tbody>
+                    <?php
+                    foreach ($_COOKIE['item'] as $name1 => $value)
+                    {
+                        $value11 = explode("__", $value);
+                        ?>
+                        <tr>
+                            <td><?php echo $value11[1]; ?></td>
+                            <td><?php echo $value11[2]; ?></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $value11['3']; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" ></td>
+                            <td><?php echo $value11[4]; ?></td>
+                            <td>
+                                <!--<a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a>-->
+                                <input type="submit" name="delete<?php echo $name;?>" value="del">
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    <td></td>
+                    </tbody>
+                </table>
+                    <?php
+                    }
+
+                    ?>
+
+
+
+
+                    <div class="box-footer">
+                        <a href="#" style="float: left;" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                        <!--  <a href="#" style="float: right;" class="btn btn-info">Proceed to Checkout <i class="fa fa-chevron-right"></i></a> -->
+                        <button style="float: right;" type="submit" class="btn btn btn-info"> Proceed with Checkout <i class="fa fa-chevron-right"></i>
                         </button>
                     </div>
+
+
                 </div>
 
-        </form>
 
-			                               
-			</div>
-
-
-			</div>
-
-			
+            </div>
 
 
 
@@ -114,12 +118,14 @@ $cart = new Cart;
 
 
 
-			</div>
-	</div>
 
 
-	<!-- footer -->
-	<?php include_once('Templates/footer.php'); ?>
+    </div>
+    </div>
+
+
+    <!-- footer -->
+    <?php include_once('Templates/footer.php'); ?>
 
 
 </body>
