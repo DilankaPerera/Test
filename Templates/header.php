@@ -18,12 +18,13 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
-	<link href="css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css" media="all"/>
+	<link href="../css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
 <!--Top header-->
+<div class="topword">
 <div class="hnavbar">
   <div class="hdropdown">
     <button class="hdropbtn">
@@ -51,6 +52,7 @@ $conn = mysqli_connect($hostname,$username,$password,$database);
     <a href="#home">Sign up</a>
     <a href="#home">Be an Agent</a>
   </div>
+</div>
 
 <!--//Top header-->
 

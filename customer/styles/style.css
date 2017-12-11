@@ -65,6 +65,13 @@ ul{
 
 /*new header*/
 
+.topword{
+position: absolute;
+right: 50px;
+padding-right: 50px;
+
+}
+
 .hnavbar {
   overflow: hidden;
   background-color: #333;
@@ -131,7 +138,7 @@ ul{
 
 .hdropdown:hover .hdropdown-content {
     display: block;
-  
+
 }
 
 .hdropbtn i.fa {
