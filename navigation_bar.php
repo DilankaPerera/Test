@@ -1,89 +1,60 @@
 
-	<?php include_once('Templates/header.php'); ?>
 
 <html>
 <head>
 <title> Navigation bar </title>
 <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
-
 <link href="css/font-awesome.css" rel="stylesheet">
-
 
 </head>
 <body>
 
+	<div class="hbnavbar">
+	  <a href="#home">Home</a>
+	  <a href="#news">All Products</a>
 
-<div class="sidebar">
-<div class="navbar">
-    <ul>
-      <li><a href="index.php">Home</a></li>
-      <li><a href="#">All Products</a></li>
-      <li><a href="#">Mobile & Tablets</a>
-<div class="dropdown">
-<ul>
-  <li><a href="#">Mobile & Tablets</a></li>
-  <li><a href="#" >Mobile & Tablets Accessories</a></li>
-  <li><a href="#">Other Smart Devices</a></li>
+		<div class="hbdropdown">
+	    <button class="hbdropbtn">Mobile & Tablets
+	      <i class="fa fa-caret-down"></i>
+	    </button>
+	    <div class="hbdropdown-content">
+	      <a href="#">Mobile & Tablets</a>
+	      <a href="#">Mobile & Tablets Accessories</a>
+	      <a href="#">Other Smart Devices</a>
+	    </div>
+	  </div>
 
-</ul>
+		<div class="hbdropdown">
+			<button class="hbdropbtn">Computers & Laptops
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="hbdropdown-content">
+				<a href="#">Computer Accessories</a>
+				<a href="#">Datacards & Routers</a>
+				<a href="#">Storage</a>
+				<a href="#">Gaming</a>
+			</div>
+		</div>
 
-</div>
-  </li>
-      <li><a href="#">Computers & Laptops</a>
-        <div class="dropdown">
-        <ul>
-          <li><a href="#">Computer Accessories</a></li>
-          <li><a href="#" >Datacards & Routers</a></li>
-          <li><a href="#">Storage</a></li>
-          <li><a href="#">Gaming</a></li>
+		<div class="hbdropdown">
+			<button class="hbdropbtn">Electronics
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="hbdropdown-content">
+				<a href="#">Camera</a>
+				<a href="#">Audio & Video Accessories</a>
+				<a href="#">Speakers</a>
+				<a href="#">Headphones</a>
+				<a href="#">Personal Care Applications</a>
+			</div>
+		</div>
 
-
-        </ul>
-
-        </div>
-      </li>
-      <li><a href="#">Electronics</a>
-      <div class="dropdown" >
-      <ul >
-                        <li><a href="#">Camera</a></li>
-                       <li><a href="#" >Audio & Video Accessories</a></li>
-                        <li><a href="#">Speakers</a></li>
-                        <li><a href="#">Headphones</a></li>
-                        <li><a href="#">Personal Care Applications</a></li>
-
-                    </ul>
-
-                  </div>
-                  </li>
-      <li><a href="#">Other Products</a>
+		<a href="#news">Other Products</a>
 
 
 
 
 
-      </li>
-      <li><a href="#sports"><i class="fa fa-futbol-o"></i> Sports Goods</a>
-        <div class="dropdown">
-          <ul >
-            <li><a href="#">Cricket</a></li>
-            <li><a href="#" >Football</a></li>
-            <li><a href="#">Rugger</a></li>
-            <li><a href="#">Basketball</a></li>
-          </ul>
-        </div>
-      </li>
-      <li><a href="#motors"><i class="fa fa-car"></i> Motors</a>
-        <div class="dropdown">
-          <ul>
-            <li><a href="#">Cars & Vans</a></li>
-            <li><a href="#" >Motocycles</a></li>
-            <li><a href="#">Parts and Accessories</a></li>
-          </ul>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
+	</div>
 </body>
 </html>
-	<?php include_once('Templates/footer.php'); ?>

@@ -11,6 +11,7 @@ if(isset($_POST['register'])){
   $bussname=$_POST["bussname"];
   $nic=$_POST["nic"];
   $lic=$_POST["lic"];
+  $pic=$_POST["pic"];
   $pwd=$_POST["pwd"];
   $repwd=$_POST["repwd"];
 
@@ -70,7 +71,7 @@ if(isset($_POST['register'])){
 
                         }
                         else{
-                            $sql = "SELECT * FROM agent WHERE agent_username='$uname'";
+                            $sql = "SELECT * FROM user WHERE username='$uname'";
                             $result = mysqli_query($conn, $sql);
                             $result_check = mysqli_num_rows($result);
 
@@ -83,12 +84,24 @@ if(isset($_POST['register'])){
                             else{
                                 //hashing the password
                                 $hash_pwd = password_hash($pwd,PASSWORD_DEFAULT);
+
+                                // getting images
+                            		$product_image = $_FILES['pic'] ['name'];
+                            		$product_image_tmp = $_FILES['pic']['tmp_name'];
+
+                            		move_uploaded_file($product_image_tmp,"agent_images/$product_image" );
+
+
+
+
                                 //inset the user into database
-                                $insert_a = "INSERT INTO agent(agent_email,agent_password,agent_username)VALUES('$email','$hash_pwd','$uname')";
-                                $result = mysqli_query($conn, $insert_a);
+                                $insert_a = "INSERT INTO agent(agent_email,agent_profile_image,agent_password,agent_username,status)VALUES('$email','$product_image','$hash_pwd','$uname','pending')";
+                                $insert_b = "INSERT INTO user(agent_password)VALUES($hash_pwd')";
+                                $result_a = mysqli_query($conn, $insert_a);
+                                $result_b = mysqli_query($conn, $insert_b);
 
                                 echo "<script language=\"JavaScript\">\n";
-                                echo "alert('Changes Saved');\n";
+                                echo "alert('Request For Approval');\n";
                                 echo "window.location='../index.php'";
                                 echo "</script>";
                             }

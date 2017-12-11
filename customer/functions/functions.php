@@ -36,7 +36,7 @@ function get_segment(){
 
 // getting products from tables by segment
 
-function getSegProduct($id1){
+function getSegProduct(){
 
 	if (isset($_GET['category'])) {
 	
@@ -54,7 +54,7 @@ function getSegProduct($id1){
 		while ($row_seg_product=mysqli_fetch_array($run_seg_product)) {
 
 				// var_dump($row_product);
-			$id = $id1;
+
 			$product_id = $row_seg_product['product_id'];
 			$product_name = $row_seg_product['product_name'];
 			$product_price = $row_seg_product['product_price'];

@@ -26,9 +26,9 @@ include('includes/db.php');
 	<div class="main_content">
 
 		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
+		<?php //include_once('Templates/navigation_bar.php'); ?>
 
-			<div class="right_content">
+			<!-- <div class="right_content"> -->
 				<div class="checkbox1">
                         <form method="post" action="checkout2.php">
                             <h1>Checkout</h1>
