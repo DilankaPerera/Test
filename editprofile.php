@@ -1,11 +1,11 @@
-<?php include_once('../Templates/header.php'); ?>
+<?php include_once('Templates/header.php'); ?>
 
 <html>
 
 <head>
-  <title> My Gzone  </title>
-  <link rel="stylesheet" type="text/css" href="../styles/style.css" media="all"/>
-  <link href="../css/font-awesome.css" rel="stylesheet">
+  <title> Gzone Technologies  </title>
+  <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
+  <link href="css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -21,9 +21,9 @@
         <br>
         <li><label for="lname"><b> Last Name </b> </label></li>
         <li><input type="text" size="60" id="lname" name="lname" ></li>
-        <br>
+       <!--  <br>
         <li><label for="email"> <b>E-mail</b></li>
-        <li><input type="varchar" size="60" id="email" name="email" ></li>
+        <li><input type="varchar" size="60" id="email" name="email" ></li> -->
         <br>
         <li><label for="pnumber"> <b>Phone number</b></label></li>
         <li><input type="varchar" size="60" id="pnumber" name="pnumber"></li>
@@ -69,5 +69,5 @@
 
 <?php
 
-include_once('../Templates/footer.php');
+include_once('Templates/footer.php');
 ?>

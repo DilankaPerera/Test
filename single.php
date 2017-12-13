@@ -53,13 +53,15 @@ include('includes/db.php');
 
                 echo "
                     <form action='view_detail_1.php' method='post'>
-						<div id='single_product1'>
+						<div id='single_product8'>
 
 							<h1>$product_name</h1>
 
-							<img src='$product_image' width='200' height='200' />
+							<img style='margin:5px;' src='admin_area/product_images/$product_image' width='200' height='200' />
 
-							<p><b> Price: $product_price </b></p>
+                            <div style='padding: 70px;'>
+
+							<p><b> LKR $product_price </b></p>
 
 							<p> $product_description</p>
 
@@ -70,10 +72,11 @@ include('includes/db.php');
 
 							<br>
 
-							<a href='index.php' style='float:left;' >Go Back</a>
+							<a href='all_product.php' style='float:left;' >Go Back</a>
 							
 							
 							<input type='submit' name='submit' value='Add To Cart'>
+                            </div>
 
 						</div>
 						</form>

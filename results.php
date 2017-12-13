@@ -26,60 +26,56 @@ include('includes/db.php');
 
 	<div class="main_content">
 
-		<!-- sidebar -->
-		<?php include_once('Templates/navigation_bar.php'); ?>
+			<div class="product_box5">
+				<?php
 
-
-		<div class="right_content">
-			<div id="product_box">
-
-			<?php
-
-			if (isset($_GET['search'])) {
+				if (isset($_GET['search'])) {
 
 				$search_query = $_GET['user_query'];
-				
-				$get_product = "select * from products where product_keywords like '%$search_query%' OR product_name like '%$search_query%'";
+
+
+				$get_product = "SELECT * FROM product WHERE product_keywords like '%$search_query%' OR product_name like '%$search_query%' ;" ; 
+
+				// echo "$get_product";
 
 				$run_product = mysqli_query($conn, $get_product);
 
-				// if (mysqli_num_rows($run_product) > 0) {
+				// IF(mysql_num_rows($))
 
+					//var_dump($run_product);
 					while ($row_product=mysqli_fetch_array($run_product)) {
+						// echo "error";
+
+					//var_dump($row_product);
 
 						$product_id = $row_product['product_id'];
 						$product_name = $row_product['product_name'];
 						$product_price = $row_product['product_price'];
 						$product_image = $row_product['product_image'];
-						$product_segment = $row_product['product_segment'];
-						$product_category= $row_product['product_category'];
-						// $product_brand = $row_product['product_brand'];
+						$product_segment = $row_product['segment_id'];
+						$product_category= $row_product['category_id'];
 
 						echo "
 
-							<div id='single_product'>
+							<div id='single_product2'>
 
-								<h3>$product_name</h3>
+								<h4>$product_name</h4>
+
+								<img src='admin_area/product_images/$product_image' width='200' height='200' />
+								<center><p><b>LKR $product_price </b></p></center>
+								
+								<center><a href='single.php?product_id=$product_id' style='text-align:center;'>DETAILS</a></center>							
 
 							</div>
 
 						";	
 					}
+					// echo "error";
 
-				// }
+				}
+	?>
 
-				// else{
-				// 	echo "No Results";
-				// }
-			}
-
-			// else{
-			// 		echo "<p>Plesea enter a search query</p>";
-			// 	}
-
-
-
-
+<?php 
 //pagination
 
 		
@@ -136,39 +132,9 @@ include('includes/db.php');
 		// echo paginate($item_per_page, $page_number, $get_total_rows[0], $total_pages, $page_url);
 		// echo '</div>';
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		?>
 
-
 		</div>
-
-
-
-		</div>
-
-
-
-
-
-
-
 
 
 	</div>

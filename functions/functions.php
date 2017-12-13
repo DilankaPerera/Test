@@ -63,7 +63,7 @@ function getSegProduct(){
 
 			echo "
 
-				<div id='single_product'>
+				<div id='single_product5'>
 
 					<h4>$product_name</h4>
 

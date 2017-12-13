@@ -45,7 +45,7 @@ $cart = new Cart;
 		<form method="post" action="checkout1.php">
 			<div class="container">
 				<div id="checkbox">
-			    <h1>My Chart</h1>
+			    <h1>My Cart</h1>
 			    <table class="table">
                     <?php
                     $d=0;
@@ -76,11 +76,11 @@ $cart = new Cart;
                         <tr>
                             <td><?php echo $value11[1]; ?></td>
                             <td><?php echo $value11[2]; ?></td>
-                            <td><input type="text" class="form-control text-center" value="<?php echo $value11['3']; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" ></td>
+                            <td><input type="text" class="form-control text-center" value="<?php echo $value11['3']; ?>"></td>
                             <td><?php echo $value11[4]; ?></td>
                             <td>
                                 <!--<a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a>-->
-                                <input type="submit" name="delete<?php echo $name;?>" value="del">
+                                <input type="submit" value="delete">
                             </td>
                         </tr>
                         <?php
@@ -98,7 +98,7 @@ $cart = new Cart;
 
 
                     <div class="box-footer">
-                        <a href="#" style="float: left;" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
+                        <a href="index.php" style="float: left;" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
                         <!--  <a href="#" style="float: right;" class="btn btn-info">Proceed to Checkout <i class="fa fa-chevron-right"></i></a> -->
                         <button style="float: right;" type="submit" class="btn btn btn-info"> Proceed with Checkout <i class="fa fa-chevron-right"></i>
                         </button>

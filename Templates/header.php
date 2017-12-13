@@ -1,131 +1,194 @@
 <?php
+session_start();
+if(isset($_SESSION['SESS_CHANGEID']) == TRUE) {
+    session_unset();
+    session_regenerate_id();
+}
 
-include('functions/functions.php');
-include('includes/db.php');
-include ('functions/cartfunctions.php');
-$cart = new Cart;
+$hostname = "localhost";
+$username = "root";
+$password = "";
+$database = "gzone_technologiesdb";
+$config_basedir = "index.php";
 
+// Create connection
+$conn = mysqli_connect($hostname,$username,$password,$database);
 
 ?>
-
 <html>
+
 <head>
-
-
-    <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
-    <link href="css/font-awesome.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <script>
-        function updateCartItem(obj,id){
-            $.get("cartAction.php", {action:"updateCartItem", product_id:id, product_quantity:obj.value}, function(data){
-                if(data == 'ok'){
-                    location.reload();
-                }else{
-                    alert('Cart update failed, please try again.');
-                }
-            });
-        }
-    </script>
-
+  <link rel="stylesheet" type="text/css" href="../styles/style.css" media="all"/>
+	<link href="../css/font-awesome.css" rel="stylesheet">
 </head>
+
 <body>
+<!--Top header-->
 
-<!-- header -->
-<?php include_once('Templates/header.php'); ?>
+<div class="topword">
+<div class="hnavbar">
 
-<!-- content -->
+  <div class="hdropdown">
+    <button class="hdropbtn">
+      <i class="fa fa-user"></i>
+    </button>
+    <div class="hdropdown-content">
+      <a href="viewdetails.php">View Profile</a>
+      <a href="deleteprofile.php">Delete Profile</a>
+      <a href="changepassword.php">Change Password</a>
+    </div>
+  </div>
 
-<div class="main_content">
 
-    <!-- sidebar -->
-    <?php //include_once(/'Templates/navigation_bar.php'); ?>
+  <a href="view_cart.php"><button class="view-cart" ><i class="fa fa-cart-arrow-down"></i></button></a>
+  <a href="customer_registration">Sign up</a>
+    <a href="agent_registration.php">Be an Agent</a>
 
-    <!-- <div class="right_content"> -->
-    <div class="container">
-        <div id="checkbox">
-            <h1>My Chart</h1>
-            <table class="table">
+    <?php if(isset($_SESSION['SESS_LOGGEDIN']) == 1){ ?>
+        <a href="logout.php" style='color:white';><?php echo "<text style='color:white;'>".$_SESSION['SESS_USERNAME']."</text>"; ?> (Log out)</a>
+
+    <?php }else{ echo "error"?>
+        <a class="link" href="login.php" style='color:white';>Login</a>
+    <?php } ?>
+
+
+
+
+
+    <!-- <a href="#home">Sign up</a>
+    <a href="#home">Be an Agent</a> -->
+  </div>
+</div>
+
+<!--//Top header-->
+
+<!--Botttom header-->
+<div class="header_bottom">
+	<div class="container">
+		<a href="index.php"><img src="./images/logo.png" id="logo"></a>
+			<div class="search_bar">
+				<form method="get" action="results.php" enctype="multipart/form-data">
+					<input type="search" name="user_query" placeholder="Search..." required="">
+					<!-- <input type="submit" name="Search" value="Search"> -->
+					<button type="submit" name="search" value="Search" class="btn btn-default search" aria-label="Left Align">
+					<i class="fa fa-search" aria-hidden="true"> </i>
+					</button>
+				</form>
+			</div>
+	</div>
+</div>
+<!--//Botttom header-->
+
+<!-- <div class="menu"> -->
+
+  <div class="hbnavbar">
+	  <a href="index.php">Home</a>
+	  <a href="all_product.php">All Products</a>
+
+		<div class="hbdropdown">
+	    <button class="hbdropbtn">Mobile & Tablets
+	      <i class="fa fa-caret-down"></i>
+	    </button>
+
+	    <div class="hbdropdown-content">
+	    	<?php
+                $query="SELECT * FROM segment WHERE category_cat_id=1";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
                 <?php
-                $d=0;
-                if(is_array($_COOKIE['item']))
-                {
-                    $d=$d+1;
                 }
-                if($d==0){
-                    echo 'no records have found';
-                }else
-                {
+                }else{
+                    echo mysqli_error($conn);
+                }
 
-                ?>
-                <thead>
-                <tr>
-                    <th>Product</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Subtotal</th>
-                </tr>
-                </thead>
-                <tbody>
+
+            ?>
+	     <!--  <a href="#">Mobile & Tablets</a>
+	      <a href="#">Mobile & Tablets Accessories</a>
+	      <a href="#">Other Smart Devices</a> -->
+	    </div>
+	  </div>
+
+		<div class="hbdropdown">
+			<button class="hbdropbtn">Computers & Laptops
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="hbdropdown-content">
+				<!-- <a href="#">Computer Accessories</a>
+				<a href="#">Datacards & Routers</a>
+				<a href="#">Storage</a>
+				<a href="#">Gaming</a> -->
+				<?php
+                $query="SELECT * FROM segment WHERE category_cat_id=2";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
                 <?php
-                foreach ($_COOKIE['item'] as $name1 => $value)
-                {
-                    $value11 = explode("__", $value);
-                    ?>
-                    <tr>
-                        <td><?php echo $value11[1]; ?></td>
-                        <td><?php echo $value11[2]; ?></td>
-                        <td><input type="text" class="form-control text-center" value="<?php echo $value11['3']; ?>" onchange="updateCartItem(this, '<?php echo $item["rowid"]; ?>')" ></td>
-                        <td><?php echo $value11[4]; ?></td>
-                        <td>
-                            <!--<a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a>-->
-                            <input type="submit" name="delete<?php echo $name;?>" value="del">
-                        </td>
-                    </tr>
-                    <?php
                 }
-                ?>
-                <td></td>
-                </tbody>
-            </table>
+                }else{
+                    echo mysqli_error($conn);
+                }
+
+
+            ?>
+			</div>
+		</div>
+
+		<div class="hbdropdown">
+			<button class="hbdropbtn">Electronics
+				<i class="fa fa-caret-down"></i>
+			</button>
+			<div class="hbdropdown-content">
+			<!-- 	<a href="#">Camera</a>
+				<a href="#">Audio & Video Accessories</a>
+				<a href="#">Speakers</a>
+				<a href="#">Headphones</a>
+				<a href="#">Personal Care Applications</a> -->
+				<?php
+                $query="SELECT * FROM segment WHERE category_cat_id=3";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
+                <?php
+                }
+                }else{
+                    echo mysqli_error($conn);
+                }
+
+
+            ?>
+			</div>
+		</div>
+
+		<!-- <a href="#">Other Products</a>
+
+ -->
+
             <?php
-            }
+                $query="SELECT * FROM segment WHERE category_cat_id=4";
+                $res=mysqli_query($conn,$query);
+                if($res){
+                while($row = mysqli_fetch_array($res)){
+                    $seg_id=$row['segment_id'];
+                    ?> 
+                <a href="../ecom/view_seg_product.php?segment=<?php echo $seg_id;?>"><?php echo $row['segment_name'];?></a>
+                <?php
+                }
+                }else{
+                    echo mysqli_error($conn);
+                }
+
 
             ?>
 
-
-
-
-            <div class="box-footer">
-                <a href="#" style="float: left;" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a>
-                <!--  <a href="#" style="float: right;" class="btn btn-info">Proceed to Checkout <i class="fa fa-chevron-right"></i></a> -->
-                <button style="float: right;" type="submit" class="btn btn btn-info"> Proceed with Checkout <i class="fa fa-chevron-right"></i>
-                </button>
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
 </div>
-</div>
-
-
-<!-- footer -->
-<?php include_once('Templates/footer.php'); ?>
-
-
-</body>
-</html>

@@ -30,7 +30,7 @@ include('includes/db.php');
                         <form method="post" action="index.php">
                             <h1>Checkout - Payment method</h1>
                             <ul class="nav nav-pills nav-justified">
-                                <li><a href="checkout1.php"><i class="fa fa-truck"></i><br>Delivery Method</a>
+                                <li><a href="idex.php"><i class="fa fa-truck"></i><br>Delivery Method</a>
                                 </li>
                                 <li><a href="checkout2.php"><i class="fa fa-eye"></i><br>Order Review</a>
                                 </li>
@@ -47,7 +47,7 @@ include('includes/db.php');
                                             <h3>Cash on Delivery</h3>
                                             <div class="box-footer text-center">
 
-                                                <input type="checkbox" name="delivery" value="delivery1">
+                                                <input type="radio" name="payment" value="payment1">
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +58,33 @@ include('includes/db.php');
 
                                             <div class="box-footer text-center">
 
-                                                <input type="checkbox" name="delivery" value="delivery2">
+                                                <input type="radio" name="payment" value="payment2">
+                                            </div>
+                                            <div id="delbox5">
+
+                                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" >
+
+                                                    <!-- Identify your business so that you can collect the payments. -->
+                                                    <input type="hidden" name="business" value="shoppinggzone@gmail.com">
+
+                                                    <!-- Specify a Buy Now button. -->
+                                                    <input type="hidden" name="cmd" value="_xclick">
+
+                                                    <!-- Specify details about the item that buyers will purchase. -->
+                                                    <!-- <input type="hidden" name="product_name" value="<?//php echo $product_name; ?>">
+                                                    <input type="hidden" name="product_id" value="<?//php echo $product_id; ?>">
+                                                    <input type="hidden" name="amount" value="<?//php echo $total; ?>">
+                                                    <input type="hidden" name="quantity" value="<?//php echo $qty; ?>">
+                                                 -->
+
+                                                    <!-- Display the payment button. -->
+                                                    <input type="image" name="submit" border="0"
+                                                    src="paypal_button.png"
+                                                    alt="PayPal - The safer, easier way to pay online">
+                                                    <img alt="" border="0" width="1" height="1"
+                                                    src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
+
+                                                    </form>
                                             </div>
                                         </div>
                                     </div>
@@ -74,7 +100,7 @@ include('includes/db.php');
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="checkout2.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to Order Review </a>
+                                    <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to Delivery Method </a>
                                 </div>
                                 <div class="pull-right">
                                     <button type="submit" class="btn btn-primary"> Place the Order <i class="fa fa-chevron-right"></i>
@@ -85,8 +111,9 @@ include('includes/db.php');
                     </div>
 			
 				
-			    
-
+			   <!--  cash on delivery 0
+                paypal 1
+ -->
 
 
 
@@ -99,3 +126,21 @@ include('includes/db.php');
 
 </body>
 </html>
+
+
+<?php
+
+// if (isset($_POST['submit'])) {
+//    $p1 = $_POST['radio'] 
+//    if ($p1=='payment1') {
+//        $query = "INSERT INTO payment_method  "
+//    }
+// }
+
+
+
+?>
+
+
+
+

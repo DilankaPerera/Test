@@ -17,10 +17,10 @@
 				<div class="col-md-3 footer_grid">
 					<h3>Information</h3>
 					<ul class="info"> 
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">About Us</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Delivery Information</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Privacy Policy</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Terms & Conditions</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="about.php">About Us</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="delivery.php">Delivery Information</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="privacy.php">Privacy Policy</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="terms.php">Terms & Conditions</a></li>
 					</ul>
 				</div>
 				<div class="col-md-3 footer_grid">
@@ -35,8 +35,8 @@
 				<div class="col-md-3 footer_grid">
 					<h3>Profile</h3>
 					<ul class="info"> 
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">My Cart</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Login</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="view_cart.php">My Cart</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="login.php">Login</a></li>
 						<!-- <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a href="#">Create Account</a></li> -->
 					</ul>
 			</div>

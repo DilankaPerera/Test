@@ -5,6 +5,7 @@ include ('includes/db.php');
 
 if(isset($_POST['submit'])){
     $id=$_POST['pid'];
+    echo $id;
     $d=0;
     if(is_array($_COOKIE['item'])){
         foreach ($_COOKIE['item'] as $name => $value){
@@ -84,6 +85,6 @@ if(isset($_POST['submit'])){
 
 
 
-    header('Location:single.php?product_id='.$id);
+   header('Location:single.php?product_id='.$id);
 }
 ?>
