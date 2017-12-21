@@ -54,7 +54,7 @@ $cart = new Cart;
                         $d=$d+1;
                     }
                     if($d==0){
-                        echo 'no records have found';
+                        echo 'No items in your cart...';
                     }else
                     {
 
@@ -80,7 +80,17 @@ $cart = new Cart;
                             <td><?php echo $value11[4]; ?></td>
                             <td>
                                 <!--<a href="cartAction.php?action=updateCartItem&id=" class="btn btn-info"><i class="glyphicon glyphicon-refresh"></i></a>-->
-                                <input type="submit" value="delete">
+
+                                <!-- delete items -->
+
+                                <!-- input type="submit" value="Delete"> -->
+                                <!-- <a href="view_detail_12.php?action=removeCartItem<?php //echo $item['product_id'] ?> " class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a> -->
+
+                                <a href="<?php //echo $item['product_id'] ?> " class="btn btn-danger" onclick="return confirm('Are you sure?')"><i class="glyphicon glyphicon-trash"></i></a>
+
+
+
+
                             </td>
                         </tr>
                         <?php

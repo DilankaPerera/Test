@@ -1,0 +1,16 @@
+#frm1{
+    padding: 5px;
+
+}
+
+#frm1 td input,select{
+    padding-top: 5px;
+    margin-bottom: 15px;
+    padding-right: 30px;
+    margin-left: 15px;
+    border-radius: 2px;
+}
+.block table tr td{
+    padding: 10px;
+}
+

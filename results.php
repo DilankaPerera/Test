@@ -61,7 +61,7 @@ include('includes/db.php');
 
 								<h4>$product_name</h4>
 
-								<img src='admin_area/product_images/$product_image' width='200' height='200' />
+								<img src='admin_area/$product_image' width='200' height='200' />
 								<center><p><b>LKR $product_price </b></p></center>
 								
 								<center><a href='single.php?product_id=$product_id' style='text-align:center;'>DETAILS</a></center>							

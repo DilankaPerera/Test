@@ -79,7 +79,7 @@ if(isset($_POST['register'])){
                             if($result_check>0){
                                 echo "<script language=\"JavaScript\">\n";
                                 echo "alert('Username already taken');\n";
-                                echo "window.location='../../test_agent_registration.php'";
+                                echo "window.location='../../agent_registration.php'";
                                 echo "</script>";
                             }
                             else{

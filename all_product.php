@@ -51,7 +51,7 @@ include('includes/db.php');
 
 					<h4>$product_name</h4>
 
-					<center><img src='admin_area/product_images/$product_image' width='200' height='200' />
+					<center><img src='admin_area/$product_image' width='200' height='200' />
 					<br>
 					<p><b> LKR $product_price </b></p></center>
 					

@@ -24,16 +24,6 @@ function get_segment(){
 
 
 
-
-
-
-
-
-
-
-
-
-
 // getting products from tables by segment
 
 function getSegProduct(){
@@ -67,13 +57,12 @@ function getSegProduct(){
 
 					<h4>$product_name</h4>
 
-					<img src='admin_area/product_images/$product_image' width='200' height='200' />
-					<p><b> LKR $product_price </b></p>
+					<img src='admin_area/$product_image' width='200' height='200' />
+					<center><p><b>LKR $product_price </b></p></center>
 					
-					<a href='single.php?product_id=$product_id' style='float:left;'>Details</a>
+					<center><a href='single.php?product_id=$product_id' style='text-align:center;'>DETAILS</a></center>
 					
-					<a href='index.php?add_cart=$product_id'><button style='float:right'>Add to Cart</button></a>
-
+					
 				</div>
 
 			";	
@@ -125,7 +114,7 @@ function getProduct(){
 
 					<h4>$product_name</h4>
 
-					<img src='admin_area/product_images/$product_image' width='200' height='200' />
+					<img src='admin_area/$product_image' width='200' height='200' />
 					<center><p><b>LKR $product_price </b></p></center>
 					
 					<center><a href='single.php?product_id=$product_id' style='text-align:center;'>DETAILS</a></center>

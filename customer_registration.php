@@ -14,7 +14,7 @@
 
 <!-- content -->
 <div class="main_content">
-    <form class = "register-form" action = "customer/includes/customer_reg_inc.php" method="POST">
+    <form class = "register-form" action = "customer/customer_reg_inc.php" method="POST">
 	<div class="reg">
 		<div class="container">
 			<h2 class="heading_reg">Customer Registration</h2>

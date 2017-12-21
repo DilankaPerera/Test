@@ -49,6 +49,7 @@ include('includes/db.php');
                 $product_segment = $row_product['segment_name'];
                 $product_category= $row_product['cat_name'];
                 $product_description = $row_product['product_description'];
+                $product_quantity = $row_product['product_quantity'];
                 // $product_brand = $row_product['product_brand'];
 
                 echo "
@@ -57,16 +58,20 @@ include('includes/db.php');
 
 							<h1>$product_name</h1>
 
-							<img style='margin:5px;' src='admin_area/product_images/$product_image' width='200' height='200' />
+							<img style='margin:5px;' src='admin_area/$product_image' width='200' height='200' />
 
                             <div style='padding: 70px;'>
 
 							<p><b> LKR $product_price </b></p>
 
 							<p> $product_description</p>
+                            <br>
+                            <p> Available Quantity $product_quantity</p>
 
 							
 							Quantity: <input type='text' name='product_quantity' value='1' readonly> 
+
+
 							
 							<input type='hidden' name='pid' value='$prod_id'>
 

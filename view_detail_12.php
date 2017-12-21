@@ -39,7 +39,7 @@ if(isset($_POST['submit'])){
                 if($tb_qty< $qty){
                     ?>
                     <script type="text/javascript">
-                        alert("ha ha");
+                        alert("ha ha");  
                     </script>
                     <?php
                 }else{
@@ -81,8 +81,11 @@ if(isset($_POST['submit'])){
         }
     }
 
-
-
     header('Location:single.php?product_id='.$id);
 }
+
+        // if ($_REQUEST[''action] == 'removeCartItem' && !empty($_REQUEST[product_id])) {
+        //     $deleteItem = ($_COOKIE['item']) -> remove($_REQUEST[['product_id']]);
+        // }
+
 ?>

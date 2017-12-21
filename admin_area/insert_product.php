@@ -155,7 +155,7 @@ include("../includes/db.php")
 		
 		move_uploaded_file($product_image_tmp,"product_images/$product_image" );
 
-		$insert_product = " INSERT INTO product (product_name,product_description, product_price, product_model, product_discount, product_segment, product_quantity, product_category, product_keywords,product_image) value('$product_name','$product_description','$product_price','$product_model','$product_discount','$product_segment','$product_quantity','$product_category','$product_keywords','$product_image')";
+		$insert_product = " INSERT INTO product (product_name,product_description, product_price, product_model, product_discount, product_segment, product_quantity, product_category, product_keywords,product_image) values ('$product_name','$product_description','$product_price','$product_model','$product_discount','$product_segment','$product_quantity','$product_category','$product_keywords','$product_image')";
 
 		$insert_pro = mysqli_query($conn, $insert_product);
 

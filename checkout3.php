@@ -62,7 +62,7 @@ include('includes/db.php');
                                             </div>
                                             <div id="delbox5">
 
-                                                    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" >
+                                                    <!-- <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" > -->
 
                                                     <!-- Identify your business so that you can collect the payments. -->
                                                     <input type="hidden" name="business" value="shoppinggzone@gmail.com">
@@ -78,13 +78,13 @@ include('includes/db.php');
                                                  -->
 
                                                     <!-- Display the payment button. -->
-                                                    <input type="image" name="submit" border="0"
+                                                    <input type="image" name="submit1" border="0"
                                                     src="paypal_button.png"
                                                     alt="PayPal - The safer, easier way to pay online">
-                                                    <img alt="" border="0" width="1" height="1"
+                                                    <!-- <img alt="" border="0" width="1" height="1"
                                                     src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" >
-
-                                                    </form>
+ -->
+                                                    
                                             </div>
                                         </div>
                                     </div>
@@ -100,10 +100,10 @@ include('includes/db.php');
 
                             <div class="box-footer">
                                 <div class="pull-left">
-                                    <a href="checkout1.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to Delivery Method </a>
+                                    <a href="checkout2.php" class="btn btn-default"><i class="fa fa-chevron-left"></i> Back to Delivery Method </a>
                                 </div>
                                 <div class="pull-right">
-                                    <button type="submit" class="btn btn-primary"> Place the Order <i class="fa fa-chevron-right"></i>
+                                    <button type="submit" class="btn btn-primary" > Place the Order  <i class="fa fa-chevron-right"></i>
                                     </button>
                                 </div>
                             </div>
@@ -129,6 +129,14 @@ include('includes/db.php');
 
 
 <?php
+
+// if (isset($_POST['submit'])) {
+//     echo "<script language=\"JavaScript\">\n";
+//     echo "alert('Your Order has been placed Successfully!');\n";
+//     echo "window.location='index.php'";
+//     echo "</script>";
+// }
+
 
 // if (isset($_POST['submit'])) {
 //    $p1 = $_POST['radio'] 

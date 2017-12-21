@@ -37,14 +37,14 @@ if($_POST['login']) {
 
             } else {
                 echo "<script language=\"JavaScript\">\n";
-                echo "alert('Incorrect Password');\n";
+                echo "alert('Invalid');\n";
                 echo "window.location='login.php'";
                 echo "</script>";
             }
         }
         else{
             echo "<script language=\"JavaScript\">\n";
-            echo "alert('Incorrect Password');\n";
+            echo "alert('Invalid');\n";
             echo "window.location='login.php'";
             echo "</script>";
         }

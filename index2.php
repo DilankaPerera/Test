@@ -1,8 +1,4 @@
-<?php
-session_start();
-// include('includes/db.php');
-?>
-
+<?php include('includes/db.php');?>
 <!DOCTYPE html>
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -18,32 +14,45 @@ session_start();
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
-        /*#map {
+        #map {
             height: 600px;
             width: 1000px;
             margin-bottom: 20px;
         }
-         Optional: Makes the sample page fill the window. 
+        /* Optional: Makes the sample page fill the window. */
         html, body {
             height: 100%;
             margin: 0;
             padding: 0;
-        }*/
+        }
     </style>
 
 
 </head>
 
-<body >
+<body onload="initGeolocation();">
 <div class="container">
-<!-- <div id="map"></div> -->
-<div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.859947104141!2d79.85692861473561!3d6.907345495009013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25965b8ad0153%3A0x7a71725e4778d96a!2sCambridge+Terrace%2C+Colombo+00700!5e0!3m2!1sen!2slk!4v1513064242512" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-    </div>
+<div id="map"></div>
 <button type="button" class="btn btn-primary" onclick="initMap();">Show Closest Locations</button>
 </div>
-
 <p id="message"></p>
+<form method="post" action="api2.php" id="myForm">
+    <div class="form-group">
+        <!-- provider_counter service id  !-->
+        <!--<label for="provider_counter" class="control-label">Closest Providers :</label>
+        <div class="text-lg-center alert-danger" id="info"></div>-->
+        <!-- display map  !-->
+        <!-- current latituide and longtuide  !-->
+        <!--<input id="ProviderId" name="ProviderId" type="hidden" value="" />-->
+        <input id="lat" type="hidden" value="" name="lat"/>
+        <input id="lng" type="hidden" value="" name="lng"/>
+    </div>
+    <!-- map div container -->
+</form>
+<form action="checkout1.php">
+    <input  type="submit" id="sub"></input>
+</form>
+
 <script type="text/javascript">
 
 
@@ -62,16 +71,14 @@ function initGeolocation()
             alert("Sorry, your browser does not support geolocation services.");
         }
     }
-   // this will select the input with id = lng
+   var lat = document.getElementById("lat"); // this will select the input with id = lat
+    var lng = document.getElementById("lng"); // this will select the input with id = lng
    // var info = document.getElementById("info"); // this will select the current div  with id = info
     var map;
-    var km = 10; // this kilometers used to specify circle wide when use drawcircle function
+    var km = 2; // this kilometers used to specify circle wide when use drawcircle function
     var Crcl ; // circle variable
  // markers array ,we will fill it dynamically
     // information window ,we will use for our location and for markers
-    function init(){
-
-    }
     function success(position)
     {
         var pos =    {
@@ -149,14 +156,14 @@ function initGeolocation()
         var infoWindow = new google.maps.InfoWindow;
 
         // Change this depending on the name of your PHP or XML file
-        downloadUrl('api2.php', function(data) {
+        downloadUrl('api2.php', function(data){
             var xml = data.responseXML;
             var markers = xml.documentElement.getElementsByTagName('marker');
             Array.prototype.forEach.call(markers, function(markerElem) {
                 var id = markerElem.getAttribute('id');
-                var name = markerElem.getAttribute('name');
-                var address = markerElem.getAttribute('address');
-                var type = markerElem.getAttribute('type');
+                var name = markerElem.getAttribute('house_number');
+                var address = markerElem.getAttribute('street_name');
+                var type = markerElem.getAttribute('city');
                 var point = new google.maps.LatLng(
                     parseFloat(markerElem.getAttribute('lat')),
                     parseFloat(markerElem.getAttribute('lng')));
@@ -209,7 +216,7 @@ function initGeolocation()
         integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
         crossorigin="anonymous"></script>
 <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZqgB95gjNr18bqMG7TFjFTLuJr6OMRAY&callback=initGeolocation">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZqgB95gjNr18bqMG7TFjFTLuJr6OMRAY&callback=initMap">
 </script>
 </body>
 </html>

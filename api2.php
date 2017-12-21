@@ -16,9 +16,9 @@ $parnode = $dom->appendChild($node);
 
 $query = "SELECT
     id,house_number,street_name,city,lat,lng,
-    ( 6371 * acos( cos( radians({$lat}) ) * cos( radians( `lat` ) ) * cos( radians( `lng` ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin( radians( `lat` ) ) ) ) AS distance
+    ( 3000 * acos( cos( radians({$lat}) ) * cos( radians( `lat` ) ) * cos( radians( `lng` ) - radians({$lng}) ) + sin( radians({$lat}) ) * sin( radians( `lat` ) ) ) ) AS distance
     FROM agent_address
-    HAVING distance < 10
+    HAVING distance < 2
     ORDER BY distance;
     ";
 $result = mysqli_query($conn,$query);

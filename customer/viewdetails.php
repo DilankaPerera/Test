@@ -1,10 +1,10 @@
-<?php include_once('Templates/header.php'); ?>
+<?php include_once('../Templates/header.php'); ?>
 
 <html>
 <head>
   <title> Gzone Technologies </title>
-  <link rel="stylesheet" type="text/css" href="styles/style.css" media="all"/>
-  <link href="css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="../styles/style.css" media="all"/>
+  <link href="../css/font-awesome.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,8 +18,8 @@
 
 <?php
 
-include_once ('includes/db.php');
-// session_start();
+include_once ('../includes/db.php');
+session_start();
 
 $uname=$_SESSION['SESS_USERNAME'];
 $sql = "SELECT * FROM customer";
@@ -96,7 +96,7 @@ mysqli_close($conn);?>
 </table>
 <br>
 <div class="edituserbtn" >
-<a href="editprofile.php">Edit Profile</a>
+<a href="../editprofile.php">Edit Profile</a>
 </div>
 </div>
 </div>
@@ -109,5 +109,5 @@ mysqli_close($conn);?>
 
 <?php
 
-include_once('Templates/footer.php');
+include_once('../Templates/footer.php');
 ?>

@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST['register'])) {
 
-    include_once ('../../includes/db.php');
+    include_once ('../includes/db.php');
 
 
 
@@ -17,7 +17,7 @@ if(isset($_POST['register'])) {
     if(!preg_match('/^[a-z A-Z 0-9]*$/x', $uname)){
         echo "<script language=\"JavaScript\">\n";
         echo "alert('Username invaild input');\n";
-        echo "window.location='../../test_customer_registration.php'";
+        echo "window.location='../customer_registration.php'";
         echo "</script>";
     }
     else{
@@ -25,14 +25,14 @@ if(isset($_POST['register'])) {
         if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
             echo "<script language=\"JavaScript\">\n";
             echo "alert('Invalid email');\n";
-            echo "window.location='../../test_customer_registration.php'";
+            echo "window.location='../customer_registration.php'";
             echo "</script>";
         }
         else{
             if($pwd!=$repwd){
                 echo "<script language=\"JavaScript\">\n";
                 echo "alert('Passwords not matching');\n";
-                echo "window.location='../../test_customer_registration.php'";
+                echo "window.location='../customer_registration.php'";
                 echo "</script>";
 
             }
@@ -48,7 +48,7 @@ if(isset($_POST['register'])) {
                 if($result_check>0){
                     echo "<script language=\"JavaScript\">\n";
                     echo "alert('Username already taken');\n";
-                    echo "window.location='../../test_customer_registration.php'";
+                    echo "window.location='../customer_registration.php'";
                     echo "</script>";
                 }
                 else{
@@ -72,7 +72,7 @@ if(isset($_POST['register'])) {
 
                     echo "<script language=\"JavaScript\">\n";
                     echo "alert('You have been registered successfully');\n";
-                    echo "window.location='/Test/index.php'";
+                    echo "window.location='/ecom/index.php'";
                     echo "</script>";
                 }
 
@@ -87,7 +87,7 @@ if(isset($_POST['register'])) {
 }
 
 else{
-    header("Location: ../test_customer_registration.php");
+    header("Location: ../customer_registration.php");
     exit();
 }
 ?>

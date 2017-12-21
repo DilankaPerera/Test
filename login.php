@@ -28,7 +28,7 @@ include ('functions/cartfunctions.php');
         <br>
         <input type="submit"  name="login" value="Login">
         <br>
-        New to Gzone ?<a href="test_customer_registration.php"> click here to sign up </a>
+        New to Gzone ?<a href="customer_registration.php"> Click here to sign up </a>
           </form>
       </div>
     </div>
